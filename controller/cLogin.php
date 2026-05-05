@@ -3,12 +3,12 @@
     require_once "core/libreriaValidacion.php";
     if(isset($_REQUEST['Volver'])){
         $_SESSION['PaginaEnCurso']='inicioPublico';
-        header('Location: indexLoginLogoff.php');
+        header('Location: indexAplicacionFinal.php');
         exit;
     }
     /*if(isset($_REQUEST['Registrarse'])){
         $_SESSION['PaginaEnCurso']='registro';
-        header('Location: indexLoginLogoff.php');
+        header('Location: AplicacionFinal.php');
         exit;
     }*/
     $textoBotonVolver='VOLVER';

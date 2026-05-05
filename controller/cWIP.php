@@ -8,7 +8,7 @@
     if(isset($_REQUEST['Volver'])){
         $_SESSION['PaginaAnterior']=$_SESSION['PaginaEnCurso'];
         $_SESSION['PaginaEnCurso']='inicioPrivado';
-        header('Location: indexLoginLogoff.php');
+        header('Location: indexAplicacionFinal.php');
         exit;
     }
     require_once $View['layout'];
