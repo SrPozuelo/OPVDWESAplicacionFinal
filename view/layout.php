@@ -7,7 +7,10 @@
         <link rel="stylesheet" href="./webroot/css/fonts.css">
         <link rel="stylesheet" href="./webroot/css/all.min.css">
         <link rel="stylesheet" href="./webroot/css/estilos.css"> 
-        <link rel="stylesheet" href="./webroot/css/estilosTabla.css"> 
+        <link rel="stylesheet" href="./webroot/css/estilosTabla.css">
+        <link rel="stylesheet" href="./webroot/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+        
     </head>
     <body>
         <?php require_once $View[$_SESSION['PaginaEnCurso']];?>
@@ -23,5 +26,6 @@
                 </div>
             </div>
         </footer>
+        <script src="./webroot/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
