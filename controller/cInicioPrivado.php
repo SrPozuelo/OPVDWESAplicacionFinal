@@ -1,8 +1,9 @@
 <?php
+    $sIndex='indexAplicacionFinal.php';
     if(empty($_SESSION['usuarioOPVDWESLoginLogoff'])){
         $_SESSION['PaginaAnterior']=$_SESSION['PaginaEnCurso'];
         $_SESSION['PaginaEnCurso']='inicioPublico';
-        header('Location: AplicacionFinal.php');
+        header('Location: '.$sIndex);
         exit;
     }
     //Se comprueba si el botón "detalles" ha sido pulsado.
@@ -10,7 +11,7 @@
         //Código que se ejecuta si el botón "Detalles" fue pulsado.
         $_SESSION['PaginaAnterior']=$_SESSION['PaginaEnCurso'];
         $_SESSION['PaginaEnCurso']='detalles';
-        header('Location: indexAplicacionFinal.php');
+        header('Location: '.$sIndex);
         exit;
     }
     //Se comprueba si el botón "Plantilla" ha sido pulsado.
@@ -18,7 +19,7 @@
         //Código que se ejecuta si el botón "Plantilla" fue pulsado.
         $_SESSION['PaginaAnterior']=$_SESSION['PaginaEnCurso'];
         $_SESSION['PaginaEnCurso']='plantilla';
-        header('Location: indexAplicacionFinal.php');
+        header('Location: '.$sIndex);
         exit;
     }
     //Se comprueba si el botón "Error" ha sido pulsado.
@@ -26,7 +27,7 @@
         //Código que se ejecuta si el botón "Plantilla" fue pulsado.
         $_SESSION['PaginaAnterior']=$_SESSION['PaginaEnCurso'];
         $_SESSION['PaginaEnCurso']='error';
-        header('Location: indexAplicacionFinal.php');
+        header('Location: '.$sIndex);
         exit;
     }
     //Se comprueba si el botón "Departamentos" ha sido pulsado.
@@ -34,7 +35,7 @@
         //Código que se ejecuta si el botón "Plantilla" fue pulsado.
         $_SESSION['PaginaAnterior']=$_SESSION['PaginaEnCurso'];
         $_SESSION['PaginaEnCurso']='departamento';
-        header('Location: indexAplicacionFinal.php');
+        header('Location: '.$sIndex);
         exit;
     }
     //Se comprueba si el botón "Rest" ha sido pulsado.
@@ -42,14 +43,14 @@
         //Código que se ejecuta si el botón "Plantilla" fue pulsado.
         $_SESSION['PaginaAnterior']=$_SESSION['PaginaEnCurso'];
         $_SESSION['PaginaEnCurso']='rest';
-        header('Location: indexAplicacionFinal.php');
+        header('Location: '.$sIndex);
         exit;
     }
     if(isset($_REQUEST['WIP'])){
         //Cóigo que se ejecuta si el botón "WIP" fue pulsado.
         $_SESSION['PaginaAnterior']=$_SESSION['PaginaEnCurso'];
         $_SESSION['PaginaEnCurso']='wip';
-        header('Location: indexAplicacionFinal.php');
+        header('Location: '.$sIndex);
         exit;
     }
     //Se comprueba si el botón "Cerrar sesion" ha sido pulsado.
@@ -57,11 +58,11 @@
         //Código que se ejecuta si el botón "Cerrar sesion" fue pulsado.
         $_SESSION['PaginaAnterior']=$_SESSION['paginaEnCurso'];
         $_SESSION['PaginaEnCurso']='inicioPublico';
-        header('Location: indexAplicacionFinal.php');
+        header('Location: '.$sIndex);
         exit;
     }
     //Se crea un array con los datos del usuario para pasarlos a la vista
-    $avInicioPrivado = [
+    $avInicioPrivado=[
         'DescUsuario'                     => $_SESSION['usuarioOPVDWESLoginLogoff']->getDescUsuario(),
         'NumAccesos'                      => $_SESSION['usuarioOPVDWESLoginLogoff']->getNumAccesos(),
         'FechaHoraUltimaConexionAnterior' => $_SESSION['usuarioOPVDWESLoginLogoff']->getFechaHoraUltimaConexionAnterior(),

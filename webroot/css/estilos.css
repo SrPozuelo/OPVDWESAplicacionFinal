@@ -38,12 +38,19 @@ body {
            cursor:pointer;
            transform:scale(1.005);
         }
+        & #Seleccionado{
+            & img{
+                background-color:rgba(255,255,0,0.7);
+                border-radius:10px;
+            }
+        }
         & button{
+            width:40px;
             background-color:transparent;
             border:0;
             & img{
                 display:block;
-                height:100%;
+                width:100%;
             }
         }
     }

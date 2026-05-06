@@ -5,10 +5,11 @@
     * @description: Controlador de Detalle.
     */
     // Se comprueba si el botón "volver" ha sido pulsado.
+    $sIndex='indexAplicacionFinal.php';
     if(isset($_REQUEST['Volver'])){
         $_SESSION['PaginaAnterior']=$_SESSION['PaginaEnCurso'];
         $_SESSION['PaginaEnCurso']='inicioPrivado';
-        header('Location: indexAplicacionFinal.php');
+        header('Location:  '.$sIndex);
         exit;
     }
     $avDetalle=[

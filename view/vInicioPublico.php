@@ -10,8 +10,23 @@
             Aplicación final
         </div>
         <form action="" method="post" id="FormularioSesion">
-            <button type="submit" name="Idioma" value="es"><img src="webroot/images/España.png" alt="España"></button>
-            <button type="submit" name="Idioma" value="pr"><img src="webroot/images/Portugal.png" alt="portugal"></button>
+            <?php
+                switch($avInicioPublico['Idioma']){
+                    case 'es':
+                        ?>
+                            <button type="submit" name="Idioma" value="es" id="Seleccionado"><img src="webroot/images/España.png" alt="España"></button>
+                            <button type="submit" name="Idioma" value="pr"><img src="webroot/images/Portugal.png" alt="portugal"></button>
+                        <?php
+                    break;
+                    case 'pr':
+                        ?>
+                            <button type="submit" name="Idioma" value="es"><img src="webroot/images/España.png" alt="España"></button>
+                            <button type="submit" name="Idioma" value="pr" id="Seleccionado"><img src="webroot/images/Portugal.png" alt="Portugal"></button>
+                        <?php
+                    break;
+                }
+            ?>
+            
             <button type="submit" name="iniciarSesion" id="Sesion"><span>INICIAR SESIÓN</span></button>
         </form>
     </div>
