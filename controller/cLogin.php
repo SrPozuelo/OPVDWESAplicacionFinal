@@ -1,14 +1,15 @@
 <?php
     require_once 'conf/ConfDBPDO.php';
     require_once "core/libreriaValidacion.php";
+    $sIndex='indexAplicacionFinal.php';
     if(isset($_REQUEST['Volver'])){
         $_SESSION['PaginaEnCurso']='inicioPublico';
-        header('Location: indexLoginLogoff.php');
+        header('Location: '.$sIndex);
         exit;
     }
     /*if(isset($_REQUEST['Registrarse'])){
         $_SESSION['PaginaEnCurso']='registro';
-        header('Location: indexLoginLogoff.php');
+        header('Location: '.$sIndex);
         exit;
     }*/
     $textoBotonVolver='VOLVER';
@@ -51,7 +52,7 @@
             //Si el login es correcto, se crea el usuario en la sesión y se redirige a la página de inicio privado.
             $_SESSION['usuarioOPVDWESLoginLogoff']=$oUsuario; 
             $_SESSION['PaginaEnCurso']='inicioPrivado';
-            header('Location: indexLoginLogoff.php');
+            header('Location: '.$sIndex);
             exit;
         }
         else{

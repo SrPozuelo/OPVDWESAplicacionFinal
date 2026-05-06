@@ -6,7 +6,7 @@
             </a>
             <h1>Óscar Pozuelo Villamandos</h1>
         </div>
-        <div class="curso-badge" style="background-color: #777BB4; color: white;">
+        <div class="curso-badge" style="background-color:#1e5631; color:white;">
             Login Logoff
         </div>
         <form action="" method="post" id="FormularioSesion">

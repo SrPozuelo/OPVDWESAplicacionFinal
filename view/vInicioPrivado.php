@@ -6,8 +6,8 @@
             </a>
             <h1>Óscar Pozuelo Villamandos</h1>
         </div>
-        <div class="curso-badge" style="background-color: #777BB4; color: white;">
-            Login Logoff
+        <div class="curso-badge" style="background-color:#1e5631; color:white;">
+            Aplicación final
         </div>
         <form action="" method="post" id="FormularioSesion">
             <button name="cerrarSesion" id="Sesion"><span>CERRAR SESIÓN</span></button>
@@ -54,6 +54,5 @@
             break;
         }
         //Se muetra el mensaje de bienvenida.
-        
     ?>
 </main>
