@@ -33,44 +33,45 @@
 </header>
 <main id="contenedor">  
     <h2 id="titulo">Aplicación final</h2>
-    <div id="carouselExampleDark" class="carousel carousel-dark slide z-2" data-bs-ride="carousel" style="height:60dvh">
+    <div id="carouselExampleDark" class="carousel carousel-dark slide z-2" data-bs-ride="carousel">
             <div class="carousel-indicators z-2">
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="bg-light active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" class="bg-light" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" class="bg-light" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" class="bg-light" aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" class="bg-light" aria-label="Slide 5"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5" class="bg-light" aria-label="Slide 6"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="6" class="bg-light" aria-label="Slide 7"></button>
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="7" class="bg-light" aria-label="Slide 8"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="bg-dark active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" class="bg-dark" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" class="bg-dark" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" class="bg-dark" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" class="bg-dark" aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5" class="bg-dark" aria-label="Slide 6"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="6" class="bg-dark" aria-label="Slide 7"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="7" class="bg-dark" aria-label="Slide 8"></button>
             </div>
             <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="2000">
-                    <iframe src="./doc/220111UsoDeLaSesionParaLaAplicación.pdf" class="d-block w-100" frameborder="0" height="100%"></iframe>
-                    <div class="carousel-caption d-none d-md-block">
+                
+                <div class="carousel-item active" data-bs-interval="5000">
+                    <img src="./webroot/images/230129DiagramaDeCasosDeUso.PNG" class="d-block mx-auto rounded" style="width:22.95dvw !important;">
+                    <div class="carousel-caption d-none d-md-block CaptionCarrousel">
+                        <h5 class="text-black bg-transparent">DIAGRAMAS DE CASO DE USO</h5>
+                        <p class="text-black bg-transparent">El diagrama de caso de uso de esta aplicación.</p>
+                        <button type="button" class="btn btn-primary">AMPLIAR</button>
+                    </div>
+                </div>
+                
+                
+                <div class="carousel-item" data-bs-interval="200000">
+                    <img src="./webroot/images/220111UsoDeLaSessionParaLaAplicación.PNG" class="d-block w-25 mx-auto rounded">
+                    <div class="carousel-caption d-none d-md-block CaptionCarrousel">
                         <h5 class="text-black bg-transparent">USO DE LA SESIÓN</h5>
                         <p class="text-black bg-transparent">Fichero con el uso de la sesión en esta aplicación.</p>
-                        <button type="button" class="btn btn-outline-dark">AMPLIAR</button>
+                        <button type="button" class="btn btn-primary">AMPLIAR</button>
                     </div>
                 </div>
 
 
                 <div class="carousel-item" data-bs-interval="5000">
-                    <iframe src="./doc/220504SecuenciaDesarrolloCRUDcompleto.pdf" class="d-block w-100" frameborder="0" style="height:60dvh;width:50%"></iframe>
-                    <div class="carousel-caption d-none d-md-block">
+                    <img src="./webroot/images/220504SecuenciaDesarrolloCRUDcompleto.PNG" class="d-block mx-auto rounded" style="width:22.6dvw !important;">
+                    <div class="carousel-caption d-none d-md-block CaptionCarrousel">
                         <h5 class="text-black bg-transparent">DESARROLLO DEL CRUD</h5>
                         <p class="text-black bg-transparent">Secuencia del desarrollo del CRUD completo.</p>
-                        <button type="button" class="btn btn-outline-dark">AMPLIAR</button>
-                    </div>
-                </div>
-
-
-                <div class="carousel-item" data-bs-interval="5000">
-                    <video src="webroot/video/home_banner_3_atto2_dmi.mp4" class="d-block w-100 object-fit-contain" alt="BYD Atto DMI" autoplay loop preload="metadata"></video>
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5 class="text-white bg-transparent">BYD ATTO2 DM-I</h5>
-                        <p class="text-white bg-transparent">No es un coche, es un BYD. Desde 20940€.</p>
-                        <button type="button" class="btn btn-outline-light">Ver promoción</button>
+                        <button type="button" class="btn btn-primary">AMPLIAR</button>
                     </div>
                 </div>
 
@@ -120,11 +121,11 @@
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon bg-black" aria-hidden="true"></span>
+                <span class="carousel-control-prev-icon bg-black rounded" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-                <span class="carousel-control-next-icon bg-black" aria-hidden="true"></span>
+                <span class="carousel-control-next-icon bg-black rounded" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
