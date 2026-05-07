@@ -7,11 +7,11 @@
         header('Location: '.$sIndex);
         exit;
     }
-    /*if(isset($_REQUEST['Registrarse'])){
+    if(isset($_REQUEST['Registrarse'])){
         $_SESSION['PaginaEnCurso']='registro';
         header('Location: '.$sIndex);
         exit;
-    }*/
+    }
     $textoBotonVolver='VOLVER';
     $aErrores=[
         "CodUsuario"=>'',
