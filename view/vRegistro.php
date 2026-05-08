@@ -26,10 +26,10 @@
                     <label for="cod">Código:</label>
                 </td>
                 <td>
-                    <input type="text" name="CodUsuario" class="texto obligatorio" id="CodUsuario" value="<?php echo(isset($_REQUEST["CodUsuario"])&&empty($aErrores["CodUsuario"]))?$_REQUEST["CodUsuario"]:''?>">
+                    <input type="text" name="CodUsuario" class="texto obligatorio" id="CodUsuario" value="<?php echo $avRegistro['CodUsuario']?>">
                 </td>
                 <td class="span">
-                    <span><?php echo $aErrores['CodUsuario']?></span>
+                    <span><?php echo $avRegistro['ErroresCodUsuario']?></span>
                 </td>
             </tr>
             <tr>
@@ -37,10 +37,10 @@
                     <label for="desc">Nombre y apellidos:</label>
                 </td>
                 <td>
-                    <input type="text" name="DescUsuario" class="texto obligatorio" id="DescUsuario" value="<?php echo(isset($_REQUEST["DescUsuario"])&&empty($aErrores["DescUsuario"]))?$_REQUEST["DescUsuario"]:''?>">
+                    <input type="text" name="DescUsuario" class="texto obligatorio" id="DescUsuario" value="<?php echo $avRegistro['DescUsuario']?>">
                 </td>
                 <td class="span">
-                    <span><?php echo $aErrores['DescUsuario']?></span>
+                    <span><?php echo $avRegistro['ErroresDescUsuario']?></span>
                 </td>
             </tr>
             <tr>
@@ -48,10 +48,10 @@
                     <label for="desc">Contraseña:</label>
                 </td>
                 <td>
-                    <input type="password" name="Password" class="texto obligatorio" id="Password" value="<?php echo(isset($_REQUEST["Password"])&&empty($aErrores["Password"]))?$_REQUEST["Password"]:''?>">
+                    <input type="password" name="Password" class="texto obligatorio" id="Password" value="<?php echo $avRegistro['Password']?>">
                 </td>
                 <td class="span">
-                    <span><?php echo $aErrores['Password']?></span>
+                    <span><?php echo $avRegistro['ErroresPassword']?></span>
                 </td>
             </tr>
             <tr>
@@ -59,10 +59,21 @@
                     <label for="desc">Confirmar contraseña:</label>
                 </td>
                 <td>
-                    <input type="password" name="ConfirmarPassword" class="texto obligatorio" id="ConfirmarPassword" value="<?php echo(isset($_REQUEST["ConfirmarPassword"])&&empty($aErrores["ConfirmarPassword"]))?$_REQUEST["ConfirmarPassword"]:''?>">
+                    <input type="password" name="ConfirmarPassword" class="texto obligatorio" id="ConfirmarPassword" value="<?php echo $avRegistro['ConfirmarPassword']?>">
                 </td>
                 <td class="span">
-                    <span><?php echo $aErrores['ConfirmarPassword']?></span>
+                    <span><?php echo $avRegistro['ErroresConfirmarPassword']?></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="desc">Respuesta de seguridad:</label>
+                </td>
+                <td>
+                    <input type="password" name="ConfirmarPassword" class="texto obligatorio" id="ConfirmarPassword" value="<?php echo $avRegistro['RespuestaDeSeguridad']?>">
+                </td>
+                <td class="span">
+                    <span><?php echo $avRegistro['ErroresRespuestaDeSeguridad']?></span>
                 </td>
             </tr>
             <tr>

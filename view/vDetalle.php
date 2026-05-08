@@ -7,7 +7,7 @@
             <h1>Óscar Pozuelo Villamandos</h1>
         </div>
         <div class="curso-badge" style="background-color:#1e5631; color:white;">
-            Login Logoff
+            Aplicacion final
         </div>
         <form action="" method="post" id="FormularioSesion">
             <button name="Volver" id="Sesion"><span>VOLVER</span></button>

@@ -12,23 +12,36 @@
         header('Location: '.$sIndex);
         exit;
     }
-    require_once $View['layout'];
     $aRespuestas=[
         'CodUsuario'=>'',
         'DescUsuario'=>'',
         'Password'=>'',
-        'ConfirmarPassword'=>''
+        'ConfirmarPassword'=>'',
+        'RespuestaDeSeguridad'=>''
     ];
     $aErrores=[
         'CodUsuario'=>'',
         'DescUsuario'=>'',
         'Password'=>'',
-        'ConfirmarPassword'=>''
+        'ConfirmarPassword'=>'',
+        'RespuestaDeSeguridad'=>''
     ];
+    $codUsuario=(isset($_REQUEST["CodUsuario"])&&(empty($aErrores["CodUsuario"])))?$_REQUEST["CodUsuario"]:'';
+    $DescUsuario=(isset($_REQUEST["DescUsuario"])&&(empty($aErrores["DescUsuario"])))?$_REQUEST["DescUsuario"]:'';
+    $Password=(isset($_REQUEST["Password"])&&(empty($aErrores["Password"])))?$_REQUEST["Password"]:'';
+    $ConfirmarPassword=(isset($_REQUEST["ConfirmarPassword"])&&(empty($aErrores["ConfirmarPassword"])))?$_REQUEST["ConfirmarPassword"]:'';
+    $RespuestaDeSeguridad=(isset($_REQUEST["RespuestaDeSeguridad"])&&(empty($aErrores["RespuestaDeSeguridad"])))?$_REQUEST["RespuestaDeSeguridad"]:'';
     $avRegistro=[
-        'CodUsuario'=>$aRespuesta['CodUsuario'],
-        'DescUsuario'=>$aRespuesta['DescUsuario'],
-        'Password'=>$aRespuesta['Password'],
-        'ConfirmarPassword'=>$aRespuesta['ConfirmarPassword']
+        'CodUsuario'                 =>$codUsuario,
+        'DescUsuario'                =>$DescUsuario,
+        'Password'                   =>$Password,
+        'ConfirmarPassword'          =>$ConfirmarPassword,
+        'RespuestaDeSeguridad'       =>$RespuestaDeSeguridad,
+        'ErroresCodUsuario'          =>$aErrores['CodUsuario'],
+        'ErroresDescUsuario'         =>$aErrores['DescUsuario'],
+        'ErroresPassword'            =>$aErrores['Password'],
+        'ErroresConfirmarPassword'   =>$aErrores['ConfirmarPassword'],
+        'ErroresRespuestaDeSeguridad'=>$aErrores['RespuestaDeSeguridad']
     ];
+    require_once $View['layout'];
 ?>
