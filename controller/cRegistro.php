@@ -26,6 +26,20 @@
         'ConfirmarPassword'=>'',
         'RespuestaDeSeguridad'=>''
     ];
+    $entradaOK=true;
+    if(isset($_REQUEST['Crear'])){
+        $aErrores['CodUsuario']=validacionFormularios::comprobarAlfabetico($_REQUEST['CodUsuario'],10,4,1);
+        if((UsuarioPDO::validarCodUsuarioExiste($_REQUEST['CodUsuario']))&&(empty($aErrores['CodUsuario']))){
+            $aErrores['CodUsuario']="El nombre del usuario ya existe.";
+        }
+        $aErrores['DescUsuario']=validacionFormularios::comprobarAlfaNumerico($_REQUEST['DescUsuario'],255,4,1);
+        $aErrores['Password']=validacionFormularios::validarPassword($_REQUEST['Password'],64,4,2,1);
+        $aErrores['ConfirmarPassword']=validacionFormularios::validarPassword($_REQUEST['ConfirmarPassword'],64,4,2,1);
+        define("ResSeguridad","pimentel");
+        if(empty($_REQUEST["RespuestaDeSeguridad"])){
+            $aErrores["RespuestaDeSeguridad"]="Campo vacío.";
+        }
+    }
     $codUsuario=(isset($_REQUEST["CodUsuario"])&&(empty($aErrores["CodUsuario"])))?$_REQUEST["CodUsuario"]:'';
     $DescUsuario=(isset($_REQUEST["DescUsuario"])&&(empty($aErrores["DescUsuario"])))?$_REQUEST["DescUsuario"]:'';
     $Password=(isset($_REQUEST["Password"])&&(empty($aErrores["Password"])))?$_REQUEST["Password"]:'';

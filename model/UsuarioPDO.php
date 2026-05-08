@@ -87,5 +87,73 @@
             $oUsuario->setFechaHoraUltimaConexion(new DateTime());
             return $oUsuario;
         }
+        /**
+        * Crea un nuevo usuario en la base de datos
+        * @param string $codUsuario
+        * @param string $password
+        * @param string $descUsuario
+        * @return Usuario|null El objeto usuario si se crea con éxito, null si falla
+        */
+        public static function crearUsuario($codUsuario, $password, $descUsuario){
+            $oUsuario=null;
+            // SQL para insertar el nuevo registro
+            // El perfil por defecto debe ser 'usuario'
+            $sql=<<<SQL
+                INSERT INTO T01_Usuario(
+                    T01_CodUsuario, 
+                    T01_Password, 
+                    T01_DescUsuario, 
+                    T01_FechaHoraUltimaConexion,
+                    T01_NumConexiones,
+                    T01_Perfil             
+                ) 
+                VALUES(
+                    :codUsuario, 
+                    SHA2(:password,256), 
+                    :descUsuario,
+                    now(),
+                    1,
+                    'usuario'
+                )
+            SQL;
+            try {
+                $consulta = DBPDO::ejecutarConsulta($sql, [
+                    ':codUsuario' => $codUsuario,
+                    ':password'   => $codUsuario.$password,
+                    ':descUsuario'=> $descUsuario
+                ]);
+                if($consulta){
+                    //Si la inserción tiene éxito, se valida al usuario para obtener el objeto completo y se rellena las fechas iniciales y el número de conexiones.
+                    $oUsuario = self::validarUsuario($codUsuario, $password);
+                }
+            }
+            catch(Exception $e){
+                return null;
+            }
+            return $oUsuario;
+        }
+        /**
+        * Comprueba si un código de usuario ya existe en la Base de Datos.
+        * @param string $codUsuario
+        * @return boolean true si existe, false si no existe
+        */
+        public static function validarCodUsuarioExiste($codUsuario){
+            $existe = false;
+            $sql="SELECT T01_CodUsuario FROM T01_Usuario WHERE T01_CodUsuario = :codUsuario";
+            try{
+                $consulta = DBPDO::ejecutarConsulta($sql, [':codUsuario'=>$codUsuario]);
+                //Si fetch devuelve algo, es que el código ya está en uso.
+                if ($consulta->fetch()) {
+                    $existe=true;
+                }
+            }
+            catch (Exception $e) {
+                // Registro del error (OWASP A09)
+                error_log("Error crítico en validación del usuario: ".$e->getMessage());
+                //si hay un problema, devuelve true para evitar problemas.
+                return true;
+            }
+            return $existe;
+        }
     }
 ?>
