@@ -1,19 +1,3 @@
-<header class="cabecera-principal">
-    <div class="contenido-cabecera">
-        <div class="identidad">
-            <a href="../index.html" style="text-decoration:none;">
-                <div class="logo-iniciales">ÓS</div>
-            </a>
-            <h1>Óscar Pozuelo Villamandos</h1>
-        </div>
-        <div class="curso-badge" style="background-color:#1e5631; color:white;">
-            Aplicación final
-        </div>
-        <form action="" method="post" id="FormularioSesion">
-            <button name="Volver" id="Sesion"><span>VOLVER</span></button>
-        </form>
-    </div>
-</header>
 <main id="contenedor">
     <h2 id="titulo">REGISTRO</h2>
     <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
@@ -70,7 +54,7 @@
                     <label for="desc">Respuesta de seguridad:</label>
                 </td>
                 <td>
-                    <input type="password" name="ConfirmarPassword" class="texto obligatorio" id="ConfirmarPassword" value="<?php echo $avRegistro['RespuestaDeSeguridad']?>">
+                    <input type="password" name="RespuestaDeSeguridad" class="texto obligatorio" id="RespuestaDeSeguridad" value="<?php echo $avRegistro['RespuestaDeSeguridad']?>">
                 </td>
                 <td class="span">
                     <span><?php echo $avRegistro['ErroresRespuestaDeSeguridad']?></span>
