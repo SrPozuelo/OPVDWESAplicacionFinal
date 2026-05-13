@@ -24,15 +24,15 @@
     }
     //Se comprueba si el botón "Error" ha sido pulsado.
     if(isset($_REQUEST['Error'])){
-        //Código que se ejecuta si el botón "Plantilla" fue pulsado.
-        $_SESSION['PaginaAnterior']=$_SESSION['PaginaEnCurso'];
-        $_SESSION['PaginaEnCurso']='error';
+        //Código que se ejecuta si el botón "Error" fue pulsado.
+        $Consulta="SELECT * FROM T03_TablaQueNoExiste";
+        DBPDO::ejecutarConsulta($Consulta);
         header('Location: '.$sIndex);
         exit;
     }
     //Se comprueba si el botón "Departamentos" ha sido pulsado.
     if(isset($_REQUEST['Departamentos'])){
-        //Código que se ejecuta si el botón "Plantilla" fue pulsado.
+        //Código que se ejecuta si el botón "Departamentos" fue pulsado.
         $_SESSION['PaginaAnterior']=$_SESSION['PaginaEnCurso'];
         $_SESSION['PaginaEnCurso']='departamento';
         header('Location: '.$sIndex);
@@ -40,12 +40,13 @@
     }
     //Se comprueba si el botón "Rest" ha sido pulsado.
     if(isset($_REQUEST['Rest'])){
-        //Código que se ejecuta si el botón "Plantilla" fue pulsado.
+        //Código que se ejecuta si el botón "Rest" fue pulsado.
         $_SESSION['PaginaAnterior']=$_SESSION['PaginaEnCurso'];
         $_SESSION['PaginaEnCurso']='rest';
         header('Location: '.$sIndex);
         exit;
     }
+    //Se comprueba si el botón "WIP" ha sido pulsado.
     if(isset($_REQUEST['WIP'])){
         //Cóigo que se ejecuta si el botón "WIP" fue pulsado.
         $_SESSION['PaginaAnterior']=$_SESSION['PaginaEnCurso'];

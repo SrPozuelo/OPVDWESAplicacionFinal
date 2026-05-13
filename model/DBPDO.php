@@ -5,6 +5,7 @@
     */
     class DBPDO{
         public static function ejecutarConsulta($sentenciaSQL,$aParametros=null){
+            $sIndex='indexAplicacionFinal.php';
             try{
                 //Conexión a la base de datos.
                 $conexion=new PDO(DSN,USERNAME,PASSWORD);
@@ -16,10 +17,10 @@
                 return $consulta;
             }
             catch(PDOException $e){
-                $_SESSION['paginaAnterior']=$_SESSION['paginaEnCurso'];
-                $_SESSION['paginaEnCurso']='error';
-                $_SESSION['error']=new AppError($e->getCode(),$e->getMessage(),$e->getFile(),$e->getLine(),$_SESSION['paginaAnterior']);
-                header('Location: indexLoginLogoff.php');
+                $_SESSION['PaginaAnterior']=$_SESSION['PaginaEnCurso'];
+                $_SESSION['PaginaEnCurso']='error';
+                $_SESSION['error']=new AppError($e->getCode(),$e->getMessage(),$e->getFile(),$e->getLine(),$_SESSION['PaginaAnterior']);
+                header('Location: '.$sIndex);
                 exit;
             }
         }

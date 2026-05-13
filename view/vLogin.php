@@ -1,16 +1,3 @@
-<header class="cabecera-principal">
-    <div class="contenido-cabecera">
-        <div class="identidad">
-            <a href="../index.html" style="text-decoration:none;">
-                <div class="logo-iniciales">ÓS</div>
-            </a>
-            <h1>Óscar Pozuelo Villamandos</h1>
-        </div>
-        <div class="curso-badge" style="background-color:#1e5631; color:white;">
-            Aplicación final
-        </div>
-    </div>
-</header>
 <main id="contenedor">  
     <h2 id="titulo">Login</h2>
     <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
