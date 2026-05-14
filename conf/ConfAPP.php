@@ -2,6 +2,8 @@
     require_once 'core/libreriaValidacion.php';
     require_once 'model/Usuario.php'; 
     require_once 'model/UsuarioPDO.php';
+    require_once 'model/Departamento.php';
+    require_once 'model/DepartamentoPDO.php';
     require_once 'model/AppError.php';
     $Controller=[
         'inicioPublico'   => 'controller/cInicioPublico.php',
@@ -15,7 +17,7 @@
         'error'           => 'controller/cError.php',
         'wip'             => 'controller/cWIP.php',
         'plantilla'       => 'controller/cPlantilla.php',
-        'departamento'    => 'controller/cDepartamentos.php',
+        'departamento'    => 'controller/cMtoDepartamentos.php',
         'rest'            => 'controller/cRest.php'
     ];
     $View=[
@@ -31,7 +33,7 @@
         'error'           => 'view/vError.php',
         'wip'             => 'view/vWIP.php',
         'plantilla'       => 'view/vPlantilla.php',
-        'departamento'    => 'view/vDepartamentos.php',
+        'departamento'    => 'view/vMtoDepartamentos.php',
         'rest'            => 'view/vRest.php'
     ];
 ?>

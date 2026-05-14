@@ -22,36 +22,36 @@
         $entradaOK=is_null($aErrores['DescDepartamentos']);
     }
     if($entradaOK){
-        $descripcionBuscada=$_REQUEST['descDepartamento'] ?? '';
+        $sDescripcionBuscada=$_REQUEST['descDepartamento'] ?? '';
         $_SESSION['BusquedaDptoEnCurso']=$sDescripcionBuscada;
     }
     else{
         if(isset($_SESSION['busquedaDptoEnCurso'])){
-            $descripcionBuscada=$_SESSION['busquedaDptoEnCurso'];
+            $sDescripcionBuscada=$_SESSION['busquedaDptoEnCurso'];
         }
     }
     $aListaDepartamentos=[];
-    $aObjetoDepartamentos=DepartamentoPDO::buscarDepartamentoPorDesc($descripcionBuscada);
+    $aObjetoDepartamentos=DepartamentoPDO::buscarDepartamentoPorDesc($sDescripcionBuscada);
     if (!is_null($aObjetoDepartamentos)) {
         foreach ($aObjetoDepartamentos as $oDepartamento) {
             $oFechaCreacion=new DateTime($oDepartamento->getFechaCreacionDepartamento());
-            $fechaBajaFormateada='';
+            $oFechaBajaFormateada='';
             if (!is_null($oDepartamento->getFechaBajaDepartamento())) {
-                $fechaBaja=new DateTime($oDepartamento->getFechaBajaDepartamento());
-                $fechaBajaFormateada = $fechaBaja->format('d-m-Y');
+                $oFechaBaja=new DateTime($oDepartamento->getFechaBajaDepartamento());
+                $oFechaBajaFormateada = $oFechaBaja->format('d-m-Y');
             }
             $aListaDepartamentos[] = [
-                'codDepartamento'           => $oDepartamento->getCodDepartamento(),
-                'descDepartamento'          => $oDepartamento->getDescDepartamento(),
-                'fechaCreacionDepartamento' => $oFechaCreacion->format('d-m-Y'),
-                'volumenDeNegocio'          => number_format($oDepartamento->getVolumenDeNegocio(), 2, ',', '.') . ' €',
-                'fechaBajaDepartamento'     => $fechaBajaFormateada
+                'CodDepartamento'           => $oDepartamento->getCodDepartamento(),
+                'DescDepartamento'          => $oDepartamento->getDescDepartamento(),
+                'FechaCreacionDepartamento' => $oFechaCreacion->format('d-m-Y'),
+                'VolumenDeNegocio'          => number_format($oDepartamento->getVolumenDeNegocio(), 2, ',', '.').' €',
+                'FechaBajaDepartamento'     => $oFechaBajaFormateada
             ];
         }
     }
     $avDepartamentos=[
         'Departamentos'           =>$aListaDepartamentos,
-        'DesDepartamentosErrores' =>(isset($_REQUEST["DescDepartamento"])&&(empty($aErrores["DescDepartamento"])))?$_REQUEST["DescDepartamento"]:'',
+        'DescDepartamentoError' =>(isset($_REQUEST["DescDepartamento"])&&(empty($aErrores["DescDepartamento"])))?$_REQUEST["DescDepartamento"]:'',
         'Busqueda'                =>$sDescripcionBuscada
     ];
     require_once $View['layout'];
