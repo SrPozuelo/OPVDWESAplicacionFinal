@@ -1,16 +1,20 @@
 <main id="contenedor">  
     <h2 id="titulo">MANTENIMIENTO DE DEPARTAMENTOS</h2>
-    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
-        <table class="formulario conErrores">
+    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" id="CentradoArriba">
+        <table class="formulario conBusqueda">
             <tr>
                 <td>
                     <label for="desc">Descripción:</label>
                 </td>
                 <td>
-                    <input type="text" name="DescDepartamento" class="texto obligatorio" id="DescDepartamento" value="<?php echo $avDepartamentos['DescDepartamentoError']?>">
+                    <input type="text" name="DescDepartamento" class="texto" id="DescDepartamento" value="<?php echo $avDepartamentos['Busqueda']?>">
                 </td>
                 <td id="Env">
-                    <button type="submit" id="Enviar" name="Enviar">BUSCAR</button>
+                    <button type="submit" id="Buscar" name="Buscar" class="BotonTabla">BUSCAR</button>
+                </td>
+                <td></td>
+                <td class="span">
+                    <span><?php echo $avDepartamentos['DescDepartamentoError']?></span>
                 </td>
             </tr>
         </table>
@@ -41,14 +45,14 @@
                                 <td>                 <?php echo $Departamento['DescDepartamento'];?>                                     </td>
                                 <td class='centrado'><?php echo $Departamento['FechaCreacionDepartamento'];?>                            </td>
                                 <td class='importe' ><?php echo $Departamento['VolumenDeNegocio'];?>                                     </td>
-                                <td>                 <?php echo ($Departamento['FechaBajaDepartamento']!=='') ? $Departamento['fechaBajaDepartamento']:'NO TIENE'; ?></td>
+                                <td>                 <?php echo ($Departamento['FechaBajaDepartamento']!=='') ? $Departamento['FechaBajaDepartamento']:'NO TIENE'; ?></td>
                             </tr>
                         <?php
                     }
                 }
                 else{
                     ?>
-                        <td colspan='5'>NO SE ENNCONTRARON DEPARTAMENTOS CON ESA DESCRIPCIÓN</td>
+                        <td colspan='5' class="centrado">NO SE ENCONTRARON DEPARTAMENTOS CON ESA DESCRIPCIÓN.</td>
                     <?php
                 }
             ?>

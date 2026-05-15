@@ -20,18 +20,18 @@ class DepartamentoPDO {
         $sql = <<<SQL
             SELECT *
             FROM T02_Departamento 
-            WHERE T02_DescDepartamento LIKE :descDpto
+            WHERE T02_DescDepartamento LIKE :descDepartamento
             ORDER BY T02_DescDepartamento ASC;
         SQL;
-        $consulta=DBPDO::ejecutarConsulta($sql,[':descDpto'=>"%$descDepartamento%"]);
+        $consulta=DBPDO::ejecutarConsulta($sql,[':descDepartamento'=>"%$descDepartamento%"]);
         //Convertir cada registro en un objeto Departamento
-        while ($oDpto=$consulta->fetchObject()) {
+        while ($oDepartamento=$consulta->fetchObject()) {
             $aDepartamentos[]=new Departamento(
-                $oDpto->T02_CodDepartamento,
-                $oDpto->T02_DescDepartamento,
-                $oDpto->T02_FechaCreacionDepartamento,
-                $oDpto->T02_VolumenDeNegocio,
-                $oDpto->T02_FechaBajaDepartamento
+                $oDepartamento->T02_CodDepartamento,
+                $oDepartamento->T02_DescDepartamento,
+                $oDepartamento->T02_FechaCreacionDepartamento,
+                $oDepartamento->T02_VolumenDeNegocio,
+                $oDepartamento->T02_FechaBajaDepartamento
             );
         }
         return $aDepartamentos;

@@ -204,6 +204,9 @@ body {
                     padding-bottom:1dvh;
                     font-size:1.2rem;
                 }
+                & th{
+                    text-align:center;
+                }
             }
             & tbody{
                 & tr td{
@@ -242,6 +245,9 @@ body {
                 }
             }
         }
+        & #CentradoArriba{
+            top:16dvh;
+        }
         & form{
             display:grid;
             position:absolute;
@@ -275,6 +281,33 @@ body {
                     }
                     & td:nth-of-type(3){
                         width:40%;
+                    }
+                }
+            }
+            & .conBusqueda{
+                width:80dvw;
+                background-color:lightblue;
+                border-radius:10px;
+                & tr{
+                    & td:nth-of-type(1){
+                        width:25%;
+                    }
+                    & td:nth-of-type(2){
+                        width:35%;
+                    }
+                    & td:nth-of-type(3){
+                        width:10%;
+                        & button{
+                            width:100%;
+                            left:0 !important;
+                        }
+                    }
+                    & td:nth-of-type(4){
+                        width:2%;
+                    }
+                    & td:nth-of-type(5){
+                        width:38%;
+                        padding-left:5%;
                     }
                 }
             }
@@ -325,11 +358,12 @@ body {
                             position:absolute;
                             width:25%;
                             height:50%;
-                            background-color:var(--color-principal);
+                            background-color:blue;
+                            border:1px solid black;
                             color:white;
                             border-radius:10px;
                         }
-                        & #Enviar, & #Crear{
+                        & #Enviar, & #Crear, & #Buscar{
                             top:50%;
                             left:50%;
                             transform:translate(10%,-50%);

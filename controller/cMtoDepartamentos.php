@@ -13,13 +13,16 @@
         exit;
     }
     $entradaOK=true;
+    $aErrores=[
+        'DescDepartamento'=>null
+    ];
     if(isset($_REQUEST['Buscar'])){
         $sDescripcionBuscada="";
-        $aErrores=[
-            'DescDepartamento'=>null
-        ];
-        $aErrores['DescDepartamento']=validacionFormularios::comprobarAlfaNumerico($_REQUEST['DescDepartamento'],255,0,1);
+        $aErrores['DescDepartamento']=validacionFormularios::comprobarAlfaNumerico($_REQUEST['DescDepartamento'],255,0,0);
         $entradaOK=is_null($aErrores['DescDepartamento']);
+    }
+    else{
+        $entradaOK=false;
     }
     if($entradaOK){
         $sDescripcionBuscada=$_REQUEST['DescDepartamento'] ?? '';
@@ -51,8 +54,8 @@
     }
     $avDepartamentos=[
         'Departamentos'           =>$aListaDepartamentos,
-        'DescDepartamentoError' =>(isset($_REQUEST["DescDepartamento"])&&(empty($aErrores["DescDepartamento"])))?$_REQUEST["DescDepartamento"]:'',
-        'Busqueda'                =>$sDescripcionBuscada
+        'DescDepartamentoError'   =>$aErrores['DescDepartamento'],
+        'Busqueda'                =>(isset($_REQUEST["DescDepartamento"])&&(empty($aErrores["DescDepartamento"])))? $_REQUEST["DescDepartamento"]:'',
     ];
     require_once $View['layout'];
 ?>

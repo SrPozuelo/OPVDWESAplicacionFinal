@@ -11,11 +11,11 @@ class Departamento {
     private $VolumenDeNegocio;
     private $FechaBajaDepartamento;
     public function __construct($CodDepartamento,$DescDepartamento,$FechaCreacionDepartamento,$VolumenDeNegocio,$FechaBajaDepartamento=null) {
-        $this->codDepartamento           = $CodDepartamento;
-        $this->descDepartamento          = $DescDepartamento;
-        $this->fechaCreacionDepartamento = $FechaCreacionDepartamento;
-        $this->volumenDeNegocio          = $VolumenDeNegocio;
-        $this->fechaBajaDepartamento     = $FechaBajaDepartamento;
+        $this->CodDepartamento           = $CodDepartamento;
+        $this->DescDepartamento          = $DescDepartamento;
+        $this->FechaCreacionDepartamento = $FechaCreacionDepartamento;
+        $this->VolumenDeNegocio          = $VolumenDeNegocio;
+        $this->FechaBajaDepartamento     = $FechaBajaDepartamento;
     }
     public function getCodDepartamento(){
         return $this->CodDepartamento;
