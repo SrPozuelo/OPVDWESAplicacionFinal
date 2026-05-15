@@ -13,21 +13,21 @@
         exit;
     }
     $entradaOK=true;
-    if(isset($_REQUEST['buscar'])){
+    if(isset($_REQUEST['Buscar'])){
         $sDescripcionBuscada="";
-        $aErrores = [
-            'descDepartamento'=>null
+        $aErrores=[
+            'DescDepartamento'=>null
         ];
         $aErrores['DescDepartamento']=validacionFormularios::comprobarAlfaNumerico($_REQUEST['DescDepartamento'],255,0,1);
-        $entradaOK=is_null($aErrores['DescDepartamentos']);
+        $entradaOK=is_null($aErrores['DescDepartamento']);
     }
     if($entradaOK){
-        $sDescripcionBuscada=$_REQUEST['descDepartamento'] ?? '';
+        $sDescripcionBuscada=$_REQUEST['DescDepartamento'] ?? '';
         $_SESSION['BusquedaDptoEnCurso']=$sDescripcionBuscada;
     }
     else{
-        if(isset($_SESSION['busquedaDptoEnCurso'])){
-            $sDescripcionBuscada=$_SESSION['busquedaDptoEnCurso'];
+        if(isset($_SESSION['BusquedaDptoEnCurso'])){
+            $sDescripcionBuscada=$_SESSION['BusquedaDptoEnCurso'];
         }
     }
     $aListaDepartamentos=[];
