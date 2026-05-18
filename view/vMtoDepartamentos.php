@@ -33,6 +33,7 @@
                 <th>Fecha de Creación</th>
                 <th>Volumen de Negocio</th>
                 <th>Fecha de Baja</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -46,6 +47,21 @@
                                 <td class='centrado'><?php echo $Departamento['FechaCreacionDepartamento'];?>                            </td>
                                 <td class='importe' ><?php echo $Departamento['VolumenDeNegocio'];?>                                     </td>
                                 <td>                 <?php echo ($Departamento['FechaBajaDepartamento']!=='') ? $Departamento['FechaBajaDepartamento']:'NO TIENE'; ?></td>
+                                <td>
+                                    <div>
+                                        <button id="Boton">EDITAR</button>
+                                        <button id="Boton">MOSTRAR</button>
+                                        <button id="Boton">BORRAR</button>
+                                        <?php
+                                            if($Departamento['FechaBajaDepartamento']!==''){
+                                                ?><button id="Boton" class="Baja">BAJA</button><?php
+                                            }
+                                            else{
+                                                ?><button id="Boton" class="Alta">ALTA</button><?php
+                                            }
+                                        ?>
+                                    </div>
+                                </td>
                             </tr>
                         <?php
                     }

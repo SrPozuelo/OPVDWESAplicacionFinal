@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="./webroot/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">     
     </head>
-    <body>
+    <body <?php if($_SESSION['PaginaEnCurso']=='wip'){echo 'style="background-color:#f5f5f5 !important;"';}?> >
         <header class="cabecera-principal">
             <div class="contenido-cabecera">
                 <div class="identidad">
