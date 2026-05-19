@@ -18,7 +18,8 @@
         'wip'             => 'controller/cWIP.php',
         'plantilla'       => 'controller/cPlantilla.php',
         'departamento'    => 'controller/cMtoDepartamentos.php',
-        'rest'            => 'controller/cRest.php'
+        'rest'            => 'controller/cRest.php',
+        'editar'          => 'controller/cConsultarModificarDepartamento.php'
     ];
     $View=[
         'inicioPublico'   => 'view/vInicioPublico.php',
@@ -34,6 +35,7 @@
         'wip'             => 'view/vWIP.php',
         'plantilla'       => 'view/vPlantilla.php',
         'departamento'    => 'view/vMtoDepartamentos.php',
-        'rest'            => 'view/vRest.php'
+        'rest'            => 'view/vRest.php',
+        'editar'          => 'view/vConsultarModificarDepartamento.php'
     ];
 ?>

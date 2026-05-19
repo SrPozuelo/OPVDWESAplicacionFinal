@@ -18,10 +18,7 @@
                     <a href="../index.html" style="text-decoration:none;">
                         <div class="logo-iniciales">ÓS</div>
                     </a>
-                    <h1>Aplicación final | Óscar Pozuelo Villamandos</h1>
-                </div>
-                <div class="curso-badge" style="background-color:#1e5631; color:white;">
-                    Aplicación final
+                    <h1><span style="color:yellow">Aplicación final</span> | Óscar Pozuelo Villamandos</h1>
                 </div>
                 <?php
                     switch($_SESSION['PaginaEnCurso']){
@@ -54,6 +51,7 @@
                         case 'plantilla':
                         case 'departamento':
                         case 'rest':
+                        case 'editar':
                             ?>
                                 <form action="" method="post" id="FormularioSesion">
                                     <button type="submit" name="Volver" id="Sesion"><span>VOLVER</span></button>

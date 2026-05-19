@@ -48,19 +48,19 @@
                                 <td class='importe' ><?php echo $Departamento['VolumenDeNegocio'];?>                                     </td>
                                 <td>                 <?php echo ($Departamento['FechaBajaDepartamento']!=='') ? $Departamento['FechaBajaDepartamento']:'NO TIENE'; ?></td>
                                 <td>
-                                    <div>
-                                        <button id="Boton">EDITAR</button>
-                                        <button id="Boton">MOSTRAR</button>
-                                        <button id="Boton">BORRAR</button>
+                                    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+                                        <button name="Editar" id="Boton" value="<?php echo $Departamento['CodDepartamento'];?>"><i class="fa-solid fa-pen"></i></button>
+                                        <button name="Mostrar" id="Boton" value="<?php echo $Departamento['CodDepartamento'];?>"><i class="fa-solid fa-eye"></i></button>
+                                        <button name="Borrar" id="Boton" value="<?php echo $Departamento['CodDepartamento'];?>"><i class="fa-solid fa-trash"></i></button>
                                         <?php
                                             if($Departamento['FechaBajaDepartamento']!==''){
-                                                ?><button id="Boton" class="Baja">BAJA</button><?php
+                                                ?><button name="Baja" id="Boton" class="Baja" value="<?php echo $Departamento['CodDepartamento'];?>"><i class="fa-solid fa-arrow-down"></i></button><?php
                                             }
                                             else{
-                                                ?><button id="Boton" class="Alta">ALTA</button><?php
+                                                ?><button name="Alta" id="Boton" class="Alta" value="<?php echo $Departamento['CodDepartamento'];?>"><i class="fa-solid fa-arrow-up"></i></button><?php
                                             }
                                         ?>
-                                    </div>
+                                    </form>
                                 </td>
                             </tr>
                         <?php

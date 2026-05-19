@@ -36,4 +36,26 @@ class DepartamentoPDO {
         }
         return $aDepartamentos;
     }
+    /**
+     * Busca un departamento específico utilizando su código identificador.
+     *
+     * @param string $codDepartamento Código único del departamento (PK).
+     * @return Departamento|null Devuelve un objeto Departamento si lo encuentra y si no lo encuentra devuelve null.
+     */
+    public static function buscarDepartamentoPorCod($CodDepartamento) {
+        $sql="SELECT * FROM T02_Departamento WHERE T02_CodDepartamento = :codDepartamento";
+        $Parametros = [':codDepartamento' => $CodDepartamento];
+        $Consulta=DBPDO::ejecutarConsulta($sql,$Parametros);
+        if($Consulta->rowCount()>0){
+            $oDepartamento=$Consulta->fetchObject();
+            return new Departamento(
+                $oDepartamento->T02_CodDepartamento,
+                $oDepartamento->T02_DescDepartamento,
+                $oDepartamento->T02_FechaCreacionDepartamento,
+                $oDepartamento->T02_VolumenDeNegocio,
+                $oDepartamento->T02_FechaBajaDepartamento
+            );
+        }
+        return null;
+    }
 }

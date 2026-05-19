@@ -12,6 +12,13 @@
         header('Location:   '.$sIndex);
         exit;
     }
+    if(isset($_REQUEST['Editar'])){
+        $_SESSION['CodDepartamentoEnCurso']=$_REQUEST['Editar'];
+        $_SESSION['PaginaAnterior']=$_SESSION['PaginaEnCurso'];
+        $_SESSION['PaginaEnCurso']='editar';
+        header('Location:   '.$sIndex);
+        exit;
+    }
     $entradaOK=true;
     $aErrores=[
         'DescDepartamento'=>null
@@ -31,6 +38,9 @@
     else{
         if(isset($_SESSION['BusquedaDptoEnCurso'])){
             $sDescripcionBuscada=$_SESSION['BusquedaDptoEnCurso'];
+        }
+        else{
+            $sDescripcionBuscada='';
         }
     }
     $aListaDepartamentos=[];
