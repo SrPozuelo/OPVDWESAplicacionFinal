@@ -26,11 +26,20 @@
         'VolumenDeNegocio'=>null
     ];
     if(isset($_REQUEST['Modificar'])){
-        
+        $aErrores['DescDepartamento']=validacionFormularios::comprobarAlfaNumerico($_REQUEST['DescDepartamento'],255,4,1);
+        $volumenFiltrado=str_replace(',','.',$_REQUEST['VolumenDeNegocio']);
+        $aErrores['VolumenDeNegocio']=validacionFormularios::comprobarFloat($volumenFiltrado,PHP_FLOAT_MAX,0,1);
     }
     else{
         $EntradaOK=false;
     }
-    $DescMostrar=isset($_REQUEST['Modificar']) ? $_REQUEST['DescDepartamento'] : $oDepartamento->getDescDepartamento();
+    $DescDepartamentoMostrar=isset($_REQUEST['Modificar']) ? $_REQUEST['DescDepartamento'] : $oDepartamento->getDescDepartamento();
+    $VolumenDeNegocioMostrar=isset($_REQUEST['Modificar']) ? $_REQUEST['VolumenDepartamento'] : $oDepartamento->getVolumenDeNegocio();
+    $avConsultarModificarDepartamento=[
+        'CodDepartamento' =>$oDepartamento->getCodDepartamento(),
+        'DescDepartamento'=>$DescDepartamentoMostrar,
+        'VolumenDeNegocio'=>$VolumenDeNegocioMostrar,
+        'FechaCreacion'   =>(new DateTime($oDepartamento->getFechaCreacionDepartamento()))->format('d-m-y')
+    ];
     require_once $View['layout'];
 ?>
