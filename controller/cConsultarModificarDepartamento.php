@@ -27,19 +27,46 @@
     ];
     if(isset($_REQUEST['Modificar'])){
         $aErrores['DescDepartamento']=validacionFormularios::comprobarAlfaNumerico($_REQUEST['DescDepartamento'],255,4,1);
-        $volumenFiltrado=str_replace(',','.',$_REQUEST['VolumenDeNegocio']);
-        $aErrores['VolumenDeNegocio']=validacionFormularios::comprobarFloat($volumenFiltrado,PHP_FLOAT_MAX,0,1);
+        $VolumenFiltrado=str_replace(',','.',$_REQUEST['VolumenDeNegocio']);
+        $aErrores['VolumenDeNegocio']=validacionFormularios::comprobarFloat($VolumenFiltrado,PHP_FLOAT_MAX,0,1);
+        foreach($aErrores as $campo => $valor){
+            if(!empty($valor)){
+                //Se comprueba si el valor es válido.
+                $entradaOK=false;
+            } 
+        }
+        if($EntradaOK){
+            if(DepartamentoPDO::modificarDepartamento($CodDepartamento,$_REQUEST['DescDepartamento'],(float)$VolumenFiltrado)){
+                $_SESSION['PaginaAnterior']=$_SESSION['PaginaEnCurso'];
+                $_SESSION['PaginaEnCurso']='departamento';
+                header('Location: '.$sIndex);
+                exit;
+            }
+            else{
+                $aErrores['DescDepartamento']="Error al modificar la descripción en la base de datos.";
+                $aErrores['VolumenDeNegocio']="Error al modificar el volumen en la base de datos.";
+            }
+        }
     }
     else{
         $EntradaOK=false;
     }
-    $DescDepartamentoMostrar=isset($_REQUEST['Modificar']) ? $_REQUEST['DescDepartamento'] : $oDepartamento->getDescDepartamento();
-    $VolumenDeNegocioMostrar=isset($_REQUEST['Modificar']) ? $_REQUEST['VolumenDepartamento'] : $oDepartamento->getVolumenDeNegocio();
+    if(isset($_REQUEST['Modificar'])){
+        $DescDepartamentoMostrar=(isset($_REQUEST["DescDepartamento"])&&empty($aErrores["DescDepartamento"])) ? $_REQUEST["DescDepartamento"]:'';
+        $VolumenDeNegocioMostrar=(isset($_REQUEST["VolumenDeNegocio"])&&empty($aErrores["VolumenDeNegocio"])) ? $_REQUEST["VolumenDeNegocio"]:'';
+    }
+    else{
+        $DescDepartamentoMostrar=$oDepartamento->getDescDepartamento();
+        $VolumenDeNegocioMostrar=$oDepartamento->getVolumenDeNegocio();
+    }
     $avConsultarModificarDepartamento=[
-        'CodDepartamento' =>$oDepartamento->getCodDepartamento(),
-        'DescDepartamento'=>$DescDepartamentoMostrar,
-        'VolumenDeNegocio'=>$VolumenDeNegocioMostrar,
-        'FechaCreacion'   =>(new DateTime($oDepartamento->getFechaCreacionDepartamento()))->format('d-m-y')
+        'CodDepartamento'      =>$oDepartamento->getCodDepartamento(),
+        'DescDepartamento'     =>$DescDepartamentoMostrar,
+        'FechaCreacion'        =>(new DateTime($oDepartamento->getFechaCreacionDepartamento()))->format('d-m-y'),
+        'VolumenDeNegocio'     =>$VolumenDeNegocioMostrar,
+        'FechaBajaDepartamento'=>(new DateTime($oDepartamento->getFechaBajaDepartamento()))->format('d-m-y'),
+        'ErrorDescDepartamento'=>$aErrores['DescDepartamento'],
+        'ErrorVolumenDeNegocio'=>$aErrores['VolumenDeNegocio']
     ];
     require_once $View['layout'];
 ?>
