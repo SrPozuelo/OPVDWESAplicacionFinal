@@ -1,6 +1,6 @@
 <main id="contenedor">  
     <h2 id="titulo">CONSULTA-MODIFICACIÓN DE DEPARTAMENTO</h2>
-    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" class="formu">
         <table class="formulario conErrores">
             <tr>
                 <td>
@@ -29,7 +29,7 @@
                     <label for="desc">Fecha de creación:</label>
                 </td>
                 <td>
-                    <input type="text" name="FechaCreacionDepartamento" class="texto bloqueado" id="FechaCreacionDepartamento" value="<?php echo($avConsultarModificarDepartamento['FechaCreacion']);?>">
+                    <input type="text" name="FechaCreacionDepartamento" class="texto bloqueado" id="FechaCreacionDepartamento" value="<?php echo($avConsultarModificarDepartamento['FechaCreacion']);?>" readonly="true">
                 </td>
                 <td class="span">
                     <span></span>
@@ -43,7 +43,7 @@
                     <input type="text" name="VolumenDeNegocio" class="texto obligatorio" id="VolumenDeNegocio" value="<?php echo($avConsultarModificarDepartamento['VolumenDeNegocio']);?>">
                 </td>
                 <td class="span">
-                    <span><?php echo $avConsultarModificarDepartamento['ErrorDescDepartamento']?></span>
+                    <span><?php echo $avConsultarModificarDepartamento['ErrorVolumenDeNegocio']?></span>
                 </td>
             </tr>
             <tr>
@@ -51,7 +51,7 @@
                     <label for="desc">FechaBajaDepartamento:</label>
                 </td>
                 <td>
-                    <input type="text" name="FechaBajaDepartamento" class="texto bloqueado" id="FechaBajaDepartamento" value="<?php echo($avConsultarModificarDepartamento['FechaBajaDepartamento']);?>">
+                    <input type="text" name="FechaBajaDepartamento" class="texto bloqueado" id="FechaBajaDepartamento" value="<?php echo($avConsultarModificarDepartamento['FechaBajaDepartamento']);?>" readonly="true">
                 </td>
                 <td class="span">
                     <span></span>
@@ -59,7 +59,7 @@
             </tr>
             <tr>
                 <td colspan="3" id="Env">
-                    <button type="submit" id="Enviar" class="BotonTabla" name="Enviar" style="top:50% !important; left:50% !important; transform:translate(-50%,-50%) !important;">ENVIAR</button>
+                    <button type="submit" id="Enviar" class="BotonTabla" name="Modificar" style="top:50% !important; left:50% !important; transform:translate(-50%,-50%) !important;">MODIFICAR</button>
                 </td>
             </tr>
         </table>

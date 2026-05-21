@@ -24,24 +24,24 @@
                     switch($_SESSION['PaginaEnCurso']){
                         case 'inicioPublico':
                             ?>
-                                <form action="" method="post" id="FormularioSesion">
+                                <form action="" method="post" class="d-flex align-items-center justify-content-evenly" style="width:15dvw;">
                                     <?php
                                         switch($avInicioPublico['Idioma']){
                                             case 'es':
                                                 ?>
-                                                    <button type="submit" name="Idioma" value="es" id="Seleccionado"><img src="webroot/images/España.png" alt="España"></button>
-                                                    <button type="submit" name="Idioma" value="pr"><img src="webroot/images/Portugal.png" alt="portugal"></button>
+                                                    <button type="submit" name="Idioma" class="Bandera" value="es" id="Seleccionado"><img src="webroot/images/España.png" alt="España"></button>
+                                                    <button type="submit" name="Idioma" class="Bandera" value="pr"><img src="webroot/images/Portugal.png" alt="portugal"></button>
                                                 <?php
                                             break;
                                             case 'pr':
                                                 ?>
-                                                    <button type="submit" name="Idioma" value="es"><img src="webroot/images/España.png" alt="España"></button>
-                                                    <button type="submit" name="Idioma" value="pr" id="Seleccionado"><img src="webroot/images/Portugal.png" alt="Portugal"></button>
+                                                    <button type="submit" name="Idioma" class="Bandera" value="es"><img src="webroot/images/España.png" alt="España"></button>
+                                                    <button type="submit" name="Idioma" class="Bandera" value="pr" id="Seleccionado"><img src="webroot/images/Portugal.png" alt="Portugal"></button>
                                                 <?php
                                             break;
                                         }
                                     ?>
-                                    <button type="submit" name="iniciarSesion" id="Sesion"><span>INICIAR SESIÓN</span></button>
+                                    <button type="submit" name="iniciarSesion" id="Sesion" class="btn btn-primary"><span>INICIAR SESIÓN</span></button>
                                 </form>
                             <?php 
                         break;
@@ -53,15 +53,15 @@
                         case 'rest':
                         case 'editar':
                             ?>
-                                <form action="" method="post" id="FormularioSesion">
-                                    <button type="submit" name="Volver" id="Sesion"><span>VOLVER</span></button>
+                                <form action="" method="post" >
+                                    <button type="submit" name="Volver" id="Sesion" class="btn btn-primary"><span>VOLVER</span></button>
                                 </form>
                             <?php
                         break;
                         case 'inicioPrivado':
                             ?>
-                                <form action="" method="post" id="FormularioSesion">
-                                    <button type="submit" name="cerrarSesion" id="Sesion"><span>CERRAR SESION</span></button>
+                                <form action="" method="post">
+                                    <button type="submit" name="cerrarSesion" id="Sesion" class="btn btn-primary"><span>CERRAR SESION</span></button>
                                 </form>
                             <?php
                         break;

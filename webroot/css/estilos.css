@@ -37,38 +37,39 @@ body {
         font-weight:900;
     }
     & #FormularioSesion{
-        display:flex;
+        /*display:flex;
         position:absolute;
         width:12.5dvw;
         top:1.2dvh;
         left:87%;
-        justify-content:space-between;
+        justify-content:space-between;*/
         & #Sesion{
             width:150px;
             height:4dvh;
-            background-color:blue;
+            /*background-color:blue;
             color:white;
             border:1px solid black;
-            border-radius:10px;
+            border-radius:10px*/
         }
         & #Sesion:hover{
            cursor:pointer;
            transform:scale(1.005);
         }
-        & #Seleccionado{
-            & img{
-                background-color:rgba(255,255,0,0.7);
-                border-radius:10px;
-            }
+        
+    }
+    & #Seleccionado{
+        & img{
+            background-color:rgba(255,255,0,0.7);
+            border-radius:10px;
         }
-        & button{
-            width:40px;
-            background-color:transparent;
-            border:0;
-            & img{
-                display:block;
-                width:100%;
-            }
+    }
+    & .Bandera{
+        width:40px;
+        background-color:transparent;
+        border:0;
+        & img{
+            display:block;
+            width:100%;
         }
     }
     & #Boton{
@@ -123,7 +124,7 @@ body {
     & #contenedor{
         display:flex;
         flex-direction:column;
-        margin-top:15dvh;
+        margin-top:5dvh;
         & #WIP{
             display:block;
             position:relative;
@@ -147,7 +148,8 @@ body {
             display:grid;
             position:absolute;
             width:100dvw;
-            height:5vh;
+            height:150px;
+            min-height: 150x;
             top:10dvh;
             place-content:center;
             font-weight:bolder;
@@ -277,18 +279,20 @@ body {
         & #CentradoArriba{
             top:16dvh;
         }
-        & form{
+        & .formu{
             display:grid;
             position:absolute;
+            top:30%;
+            left:50%;
+            transform:translate(-50%);
+            place-content:center;
+        }
+        & form{
             /*width:80dvw;
             height:20dvw;
             margin-top:5dvw;
             margin-left:10dvw;
             margin-bottom:10dvh;*/
-            top:30%;
-            left:50%;
-            transform:translate(-50%);
-            place-content:center;
             & .sinErrores{
                 width:30dvw;
                 & tr{
@@ -435,8 +439,11 @@ body {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 .contenido-cabecera {
-    max-width: 1200px;
-    margin: 0 auto;
+    width:80%;
+    margin-top:0;
+    margin-left:20dvw;
+    margin-right:0;
+    margin-bottom:0;
     padding: 0 20px;
     display: flex;
     justify-content: space-between;

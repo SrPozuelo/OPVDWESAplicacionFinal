@@ -58,4 +58,29 @@ class DepartamentoPDO {
         }
         return null;
     }
+    /**
+    * Actualiza los datos modificables de un departamento existente.
+    * Permite modificar la descripción y el volumen de negocio referenciando al registro por su código.
+    *
+    * @param string $CodDepartamento  Código del departamento a actualizar.
+    * @param string $DescDepartamento Nueva descripción del departamento.
+    * @param float  $VolumenDeNegocio Nuevo volumen de negocio.
+    * @return PDOStatement|bool Devuelve el objeto PDOStatement evaluable como booleano para confirmar el éxito de la consulta.
+    */
+    public static function modificarDepartamento($CodDepartamento,$DescDepartamento,$VolumenDeNegocio){
+        $sql=<<<SQL
+            UPDATE T02_Departamento 
+            SET
+                T02_DescDepartamento = :DescDepartamento, 
+                T02_VolumenDeNegocio = :VolumenDeNegocio
+            WHERE T02_CodDepartamento = :CodDepartamento
+        SQL;
+        $Parametros = [
+            ':DescDepartamento'=> $DescDepartamento,
+            ':VolumenDeNegocio'=> $VolumenDeNegocio,
+            ':CodDepartamento' => $CodDepartamento
+        ];
+        $Consulta=DBPDO::ejecutarConsulta($sql,$Parametros);
+        return $Consulta; // Devuelve true si la consulta se ejecutó
+    }
 }

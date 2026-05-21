@@ -1,6 +1,6 @@
 <main id="contenedor">
     <h2 id="titulo">REGISTRO</h2>
-    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" class="formu">
         <table class="formulario conErrores">
             <tr>
                 <td colspan="3"><h3>Crear nuevo usuario:</h3></td>

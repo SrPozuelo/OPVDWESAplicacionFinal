@@ -27,15 +27,15 @@
     ];
     if(isset($_REQUEST['Modificar'])){
         $aErrores['DescDepartamento']=validacionFormularios::comprobarAlfaNumerico($_REQUEST['DescDepartamento'],255,4,1);
-        $VolumenFiltrado=str_replace(',','.',$_REQUEST['VolumenDeNegocio']);
-        $aErrores['VolumenDeNegocio']=validacionFormularios::comprobarFloat($VolumenFiltrado,PHP_FLOAT_MAX,0,1);
+        $aErrores['VolumenDeNegocio']= validacionFormularios::comprobarFloatMonetarioES($_REQUEST['VolumenDeNegocio'],PHP_FLOAT_MAX,0,1);
         foreach($aErrores as $campo => $valor){
             if(!empty($valor)){
                 //Se comprueba si el valor es válido.
-                $entradaOK=false;
+                $EntradaOK=false;
             } 
         }
         if($EntradaOK){
+            $VolumenFiltrado=str_replace(',','.',$_REQUEST['VolumenDeNegocio']);
             if(DepartamentoPDO::modificarDepartamento($CodDepartamento,$_REQUEST['DescDepartamento'],(float)$VolumenFiltrado)){
                 $_SESSION['PaginaAnterior']=$_SESSION['PaginaEnCurso'];
                 $_SESSION['PaginaEnCurso']='departamento';
@@ -57,7 +57,7 @@
     }
     else{
         $DescDepartamentoMostrar=$oDepartamento->getDescDepartamento();
-        $VolumenDeNegocioMostrar=$oDepartamento->getVolumenDeNegocio();
+        $VolumenDeNegocioMostrar=str_replace('.',',',($oDepartamento->getVolumenDeNegocio()));
     }
     $avConsultarModificarDepartamento=[
         'CodDepartamento'      =>$oDepartamento->getCodDepartamento(),
