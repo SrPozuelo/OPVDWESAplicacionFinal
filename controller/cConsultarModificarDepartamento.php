@@ -27,7 +27,7 @@
     ];
     if(isset($_REQUEST['Modificar'])){
         $aErrores['DescDepartamento']=validacionFormularios::comprobarAlfaNumerico($_REQUEST['DescDepartamento'],255,4,1);
-        $aErrores['VolumenDeNegocio']= validacionFormularios::comprobarFloatMonetarioES($_REQUEST['VolumenDeNegocio'],PHP_FLOAT_MAX,0,1);
+        $aErrores['VolumenDeNegocio']=validacionFormularios::comprobarFloatMonetarioES($_REQUEST['VolumenDeNegocio'],PHP_FLOAT_MAX,0,1);
         foreach($aErrores as $campo => $valor){
             if(!empty($valor)){
                 //Se comprueba si el valor es válido.
@@ -52,12 +52,13 @@
         $EntradaOK=false;
     }
     if(isset($_REQUEST['Modificar'])){
-        $DescDepartamentoMostrar=(isset($_REQUEST["DescDepartamento"])&&empty($aErrores["DescDepartamento"])) ? $_REQUEST["DescDepartamento"]:'';
-        $VolumenDeNegocioMostrar=(isset($_REQUEST["VolumenDeNegocio"])&&empty($aErrores["VolumenDeNegocio"])) ? $_REQUEST["VolumenDeNegocio"]:'';
+        $DescDepartamentoMostrar=(isset($_REQUEST["DescDepartamento"])&&empty($aErrores["DescDepartamento"])) ? $_REQUEST["DescDepartamento"]:$oDepartamento->getDescDepartamento();
+        $VolumenDeNegocioMostrar=(isset($_REQUEST["VolumenDeNegocio"])&&empty($aErrores["VolumenDeNegocio"])) ? $_REQUEST["VolumenDeNegocio"]:$oDepartamento->getVolumenDeNegocio();
+        $VolumenDeNegocioMostrar=number_format($VolumenDeNegocioMostrar, 2, ',', '.');
     }
     else{
         $DescDepartamentoMostrar=$oDepartamento->getDescDepartamento();
-        $VolumenDeNegocioMostrar=str_replace('.',',',($oDepartamento->getVolumenDeNegocio()));
+        $VolumenDeNegocioMostrar=number_format($oDepartamento->getVolumenDeNegocio(), 2, ',','.');
     }
     $avConsultarModificarDepartamento=[
         'CodDepartamento'      =>$oDepartamento->getCodDepartamento(),

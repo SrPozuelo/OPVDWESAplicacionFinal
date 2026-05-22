@@ -20,7 +20,7 @@
                 <td>
                     <input type="text" name="DescDepartamento" class="texto obligatorio" id="DescDepartamento" value="<?php echo($avConsultarModificarDepartamento['DescDepartamento']);?>">
                 </td>
-                <td class="span">
+                <td class="span Euro">
                     <span><?php echo $avConsultarModificarDepartamento['ErrorDescDepartamento']?></span>
                 </td>
             </tr>
@@ -59,7 +59,7 @@
             </tr>
             <tr>
                 <td colspan="3" id="Env">
-                    <button type="submit" id="Enviar" class="BotonTabla" name="Modificar" style="top:50% !important; left:50% !important; transform:translate(-50%,-50%) !important;">MODIFICAR</button>
+                    <button type="submit" class="btn btn-primary" name="Modificar" style="margin-left:45% !important">MODIFICAR</button>
                 </td>
             </tr>
         </table>
