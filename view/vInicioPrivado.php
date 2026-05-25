@@ -11,7 +11,7 @@
     <?php
         switch($avInicioPrivado['idioma']){
             case "es":
-                echo("<h3>Bienvenido ".$avInicioPrivado['DescUsuario'].".</h3>");
+                echo("<h3 style='margin-top:6dvw'>Bienvenido ".$avInicioPrivado['DescUsuario'].".</h3>");
                 if($avInicioPrivado['NumAccesos']==1){
                     //Esto se muestra si es la primera vez que el usuario inicia sesión en la aplicación.
                     echo('<h3>Esta es la primera vez que se conecta.</h3>');
@@ -24,7 +24,7 @@
                 }
             break;
             case "pr";
-                echo("<h3>Bem-vindo ".$avInicioPrivado['DescUsuario'].".</h3>");
+                echo("<h3 style='margin-top:6dvw'>Bem-vindo ".$avInicioPrivado['DescUsuario'].".</h3>");
                 if($avInicioPrivado['NumAccesos']==1){
                     //Esto se muestra si es la primera vez que el usuario inicia sesión en la aplicación.
                     echo('<h3>Esta é a primeira vez que se liga.</h3>');

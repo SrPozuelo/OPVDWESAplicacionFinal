@@ -5,6 +5,9 @@
     require_once 'model/Departamento.php';
     require_once 'model/DepartamentoPDO.php';
     require_once 'model/AppError.php';
+    require_once 'model/REST.php';
+    require_once 'model/FotoNasa.php';
+    const API_KEY_NASA='VArtVZZeOSBGcSkPjTl7VzP0gX2olfPh8kdQgz3b';
     $Controller=[
         'inicioPublico'   => 'controller/cInicioPublico.php',
         'login'           => 'controller/cLogin.php',

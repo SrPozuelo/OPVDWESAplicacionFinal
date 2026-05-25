@@ -149,7 +149,7 @@ body {
             position:absolute;
             width:100dvw;
             height:150px;
-            min-height: 150x;
+            min-height:150px;
             top:10dvh;
             place-content:center;
             font-weight:bolder;
