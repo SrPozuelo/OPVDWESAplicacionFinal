@@ -1,6 +1,6 @@
 <main id="contenedor">  
     <h2 id="titulo">Aplicación final</h2>
-    <div id="carouselExampleDark" class="carousel carousel-dark slide z-2" data-bs-ride="carousel">
+    <div id="carouselExampleDark" class="carousel carousel-dark slide z-2" data-bs-ride="carousel" style="margin-top:10dvh;">
         <div class="carousel-indicators z-2">
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="bg-dark active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" class="bg-dark" aria-label="Slide 2"></button>
@@ -13,7 +13,7 @@
         </div>
         <div class="carousel-inner">
 
-            <div class="carousel-item active" data-bs-interval="5000">
+            <div class="carousel-item active" data-bs-interval="2000">
                 <img src="./webroot/images/230129DiagramaDeCasosDeUso.PNG" class="d-block mx-auto rounded" style="width:22.95dvw !important;">
                 <div class="carousel-caption d-none d-md-block CaptionCarrousel">
                     <h5 class="text-black bg-transparent">DIAGRAMAS DE CASO DE USO</h5>
@@ -23,7 +23,7 @@
             </div>
 
 
-            <div class="carousel-item" data-bs-interval="200000">
+            <div class="carousel-item" data-bs-interval="2000">
                 <img src="./webroot/images/220111UsoDeLaSessionParaLaAplicación.PNG" class="d-block w-25 mx-auto rounded">
                 <div class="carousel-caption d-none d-md-block CaptionCarrousel">
                     <h5 class="text-black bg-transparent">USO DE LA SESIÓN</h5>
@@ -33,8 +33,8 @@
             </div>
 
 
-            <div class="carousel-item" data-bs-interval="5000">
-                <img src="./webroot/images/220504SecuenciaDesarrolloCRUDcompleto.PNG" class="d-block mx-auto rounded" style="width:22.6dvw !important;">
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="./webroot/images/220504SecuenciaDesarrolloCRUDcompleto.PNG" class="d-block mx-auto rounded" style="width:22.52dvw !important;">
                 <div class="carousel-caption d-none d-md-block CaptionCarrousel">
                     <h5 class="text-black bg-transparent">DESARROLLO DEL CRUD</h5>
                     <p class="text-black bg-transparent">Secuencia del desarrollo del CRUD completo.</p>
@@ -43,29 +43,31 @@
             </div>
 
 
-            <div class="carousel-item" data-bs-interval="5000">
-                <video src="webroot/video/home_banner_4_dolphin.mp4" class="d-block w-100 object-fit-contain" alt="BYD Dolphin" autoplay loop preload="metadata"></video>
-                <div class="carousel-caption d-none d-md-block">
-                    <h5 class="text-white bg-transparent">Cuarto slide label</h5>
-                    <p class="text-white bg-transparent">Some representative placeholder content for the third slide.</p>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="./webroot/images/230129ArbolDeNavegación.PNG" class="d-block mx-auto rounded" style="width:23.20dvw !important;">
+                <div class="carousel-caption d-none d-md-block CaptionCarrousel">
+                    <h5 class="text-black bg-transparent">ÁRBOL DE NAVEGACIÓN</h5>
+                    <p class="text-black bg-transparent">Árbol de navegación de la aplicación final.</p>
+                    <button type="button" class="btn btn-primary">AMPLIAR</button>
                 </div>
             </div>
 
 
-            <div class="carousel-item" data-bs-interval="5000">
-                <video src="webroot/video/home_banner_5_seal_dmi.mp4" class="d-block w-100 object-fit-contain" alt="BYD Seal DMI" autoplay loop preload="metadata"></video>
-                <div class="carousel-caption d-none d-md-block">
-                    <h5 class="text-white bg-transparent">Quinto slide label</h5>
-                    <p class="text-white bg-transparent">Some representative placeholder content for the third slide.</p>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="./webroot/images/230129CatalogoDeRequisitos.PNG" class="d-block mx-auto rounded" style="width:23.42dvw !important;">
+                <div class="carousel-caption d-none d-md-block CaptionCarrousel">
+                    <h5 class="text-black bg-transparent">CATÁLOGO DE REQUISITOS</h5>
+                    <p class="text-black bg-transparent">Catálogo de requisitos de la Aplicación Final.</p>
+                    <button type="button" class="btn btn-primary">AMPLIAR</button>
                 </div>
             </div>
 
-
-            <div class="carousel-item" data-bs-interval="5000">
-                <video src="webroot/video/home_banner_6_seal.mp4" class="d-block w-100 object-fit-contain" alt="BYD Seal" autoplay loop preload="metadata"></video>
-                <div class="carousel-caption d-none d-md-block">
-                    <h5 class="text-white bg-transparent">Sexto slide label</h5>
-                    <p class="text-white bg-transparent">Some representative placeholder content for the third slide.</p>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="./webroot/images/230131DiagramaDeClases.PNG" class="d-block mx-auto rounded" style="width:23.46dvw !important;">
+                <div class="carousel-caption d-none d-md-block CaptionCarrousel">
+                    <h5 class="text-black bg-transparent">DIAGRAMA DE CLASES</h5>
+                    <p class="text-black bg-transparent">Diagrama de clases de la Aplicación Final.</p>
+                    <button type="button" class="btn btn-primary">AMPLIAR</button>
                 </div>
             </div>
 

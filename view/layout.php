@@ -11,40 +11,37 @@
         <link rel="stylesheet" href="./webroot/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">     
     </head>
-    <body>
+    <body <?php if($_SESSION['PaginaEnCurso']=='wip'){echo 'style="background-color:#f5f5f5 !important;"';}?> >
         <header class="cabecera-principal">
             <div class="contenido-cabecera">
                 <div class="identidad">
                     <a href="../index.html" style="text-decoration:none;">
                         <div class="logo-iniciales">ÓS</div>
                     </a>
-                    <h1>Aplicación final | Óscar Pozuelo Villamandos</h1>
-                </div>
-                <div class="curso-badge" style="background-color:#1e5631; color:white;">
-                    Aplicación final
+                    <h1><span style="color:yellow">Aplicación final</span> | Óscar Pozuelo Villamandos</h1>
                 </div>
                 <?php
                     switch($_SESSION['PaginaEnCurso']){
                         case 'inicioPublico':
                             ?>
-                                <form action="" method="post" id="FormularioSesion">
+                                <form action="" method="post" class="d-flex align-items-center justify-content-evenly" style="width:15dvw;">
                                     <?php
                                         switch($avInicioPublico['Idioma']){
                                             case 'es':
                                                 ?>
-                                                    <button type="submit" name="Idioma" value="es" id="Seleccionado"><img src="webroot/images/España.png" alt="España"></button>
-                                                    <button type="submit" name="Idioma" value="pr"><img src="webroot/images/Portugal.png" alt="portugal"></button>
+                                                    <button type="submit" name="Idioma" class="Bandera" value="es" id="Seleccionado"><img src="webroot/images/España.png" alt="España"></button>
+                                                    <button type="submit" name="Idioma" class="Bandera" value="pr"><img src="webroot/images/Portugal.png" alt="portugal"></button>
                                                 <?php
                                             break;
                                             case 'pr':
                                                 ?>
-                                                    <button type="submit" name="Idioma" value="es"><img src="webroot/images/España.png" alt="España"></button>
-                                                    <button type="submit" name="Idioma" value="pr" id="Seleccionado"><img src="webroot/images/Portugal.png" alt="Portugal"></button>
+                                                    <button type="submit" name="Idioma" class="Bandera" value="es"><img src="webroot/images/España.png" alt="España"></button>
+                                                    <button type="submit" name="Idioma" class="Bandera" value="pr" id="Seleccionado"><img src="webroot/images/Portugal.png" alt="Portugal"></button>
                                                 <?php
                                             break;
                                         }
                                     ?>
-                                    <button type="submit" name="iniciarSesion" id="Sesion"><span>INICIAR SESIÓN</span></button>
+                                    <button type="submit" name="iniciarSesion" id="Sesion" class="btn btn-primary"><span>INICIAR SESIÓN</span></button>
                                 </form>
                             <?php 
                         break;
@@ -54,16 +51,17 @@
                         case 'plantilla':
                         case 'departamento':
                         case 'rest':
+                        case 'editar':
                             ?>
-                                <form action="" method="post" id="FormularioSesion">
-                                    <button type="submit" name="Volver" id="Sesion"><span>VOLVER</span></button>
+                                <form action="" method="post" >
+                                    <button type="submit" name="Volver" id="Sesion" class="btn btn-primary"><span>VOLVER</span></button>
                                 </form>
                             <?php
                         break;
                         case 'inicioPrivado':
                             ?>
-                                <form action="" method="post" id="FormularioSesion">
-                                    <button type="submit" name="cerrarSesion" id="Sesion"><span>CERRAR SESION</span></button>
+                                <form action="" method="post">
+                                    <button type="submit" name="cerrarSesion" id="Sesion" class="btn btn-primary"><span>CERRAR SESION</span></button>
                                 </form>
                             <?php
                         break;

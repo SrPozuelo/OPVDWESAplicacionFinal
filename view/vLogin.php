@@ -1,6 +1,6 @@
 <main id="contenedor">  
     <h2 id="titulo">Login</h2>
-    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" class="formu">
         <table class="formulario conErrores">
             <tr>
                 <td colspan="3"><h3>Iniciar sesion:</h3></td>

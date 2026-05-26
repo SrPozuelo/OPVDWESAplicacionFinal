@@ -20,20 +20,67 @@ class DepartamentoPDO {
         $sql = <<<SQL
             SELECT *
             FROM T02_Departamento 
-            WHERE T02_DescDepartamento LIKE :descDpto
+            WHERE T02_DescDepartamento LIKE :descDepartamento
             ORDER BY T02_DescDepartamento ASC;
         SQL;
-        $consulta=DBPDO::ejecutarConsulta($sql,[':descDpto'=>"%$descDepartamento%"]);
+        $consulta=DBPDO::ejecutarConsulta($sql,[':descDepartamento'=>"%$descDepartamento%"]);
         //Convertir cada registro en un objeto Departamento
-        while ($oDpto=$consulta->fetchObject()) {
+        while ($oDepartamento=$consulta->fetchObject()) {
             $aDepartamentos[]=new Departamento(
-                $oDpto->T02_CodDepartamento,
-                $oDpto->T02_DescDepartamento,
-                $oDpto->T02_FechaCreacionDepartamento,
-                $oDpto->T02_VolumenDeNegocio,
-                $oDpto->T02_FechaBajaDepartamento
+                $oDepartamento->T02_CodDepartamento,
+                $oDepartamento->T02_DescDepartamento,
+                $oDepartamento->T02_FechaCreacionDepartamento,
+                $oDepartamento->T02_VolumenDeNegocio,
+                $oDepartamento->T02_FechaBajaDepartamento
             );
         }
         return $aDepartamentos;
+    }
+    /**
+     * Busca un departamento específico utilizando su código identificador.
+     *
+     * @param string $codDepartamento Código único del departamento (PK).
+     * @return Departamento|null Devuelve un objeto Departamento si lo encuentra y si no lo encuentra devuelve null.
+     */
+    public static function buscarDepartamentoPorCod($CodDepartamento) {
+        $sql="SELECT * FROM T02_Departamento WHERE T02_CodDepartamento = :codDepartamento";
+        $Parametros = [':codDepartamento' => $CodDepartamento];
+        $Consulta=DBPDO::ejecutarConsulta($sql,$Parametros);
+        if($Consulta->rowCount()>0){
+            $oDepartamento=$Consulta->fetchObject();
+            return new Departamento(
+                $oDepartamento->T02_CodDepartamento,
+                $oDepartamento->T02_DescDepartamento,
+                $oDepartamento->T02_FechaCreacionDepartamento,
+                $oDepartamento->T02_VolumenDeNegocio,
+                $oDepartamento->T02_FechaBajaDepartamento
+            );
+        }
+        return null;
+    }
+    /**
+    * Actualiza los datos modificables de un departamento existente.
+    * Permite modificar la descripción y el volumen de negocio referenciando al registro por su código.
+    *
+    * @param string $CodDepartamento  Código del departamento a actualizar.
+    * @param string $DescDepartamento Nueva descripción del departamento.
+    * @param float  $VolumenDeNegocio Nuevo volumen de negocio.
+    * @return PDOStatement|bool Devuelve el objeto PDOStatement evaluable como booleano para confirmar el éxito de la consulta.
+    */
+    public static function modificarDepartamento($CodDepartamento,$DescDepartamento,$VolumenDeNegocio){
+        $sql=<<<SQL
+            UPDATE T02_Departamento 
+            SET
+                T02_DescDepartamento = :DescDepartamento, 
+                T02_VolumenDeNegocio = :VolumenDeNegocio
+            WHERE T02_CodDepartamento = :CodDepartamento
+        SQL;
+        $Parametros = [
+            ':DescDepartamento'=> $DescDepartamento,
+            ':VolumenDeNegocio'=> $VolumenDeNegocio,
+            ':CodDepartamento' => $CodDepartamento
+        ];
+        $Consulta=DBPDO::ejecutarConsulta($sql,$Parametros);
+        return $Consulta; // Devuelve true si la consulta se ejecutó
     }
 }
