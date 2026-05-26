@@ -22,7 +22,7 @@
     $sFechaActualFormateada=$oFechaActual->format('d-m-y');
     $FechaMinima="16-06-1995";
     if(!isset($Session['FechaNasaEnCurso'])){
-        $_SESSION['FechaNasaEnCurso']=$FechaActualFormateada;
+        $_SESSION['FechaNasaEnCurso']=$sFechaActualFormateada;
     }
     $aErrores=['FechaNasaEnCurso'=>null];
     $EntradaOK=true;
@@ -39,5 +39,26 @@
             }
         }
     }
+    $sFechaSolicitada=$_SESSION['FechaNasaEnCurso'];
+    $oFotoNasa=null;
+    if((isset($_SESSION['FotoNasaEnCurso'])) && ($_SESSION['FotoNasaEnCurso'] instanceof FotoNasa) && ($_SESSION['FotoNasaEnCurso']->getFecha()=== $fechaSolicitada)){
+        $oFotoNasa=$_SESSION['FotoNasaEnCurso'];
+    }
+    else{
+        $oFotoNasa=REST::apiNasa($sFechaSolicitada);
+        $_SESSION['fotoNasaEnCurso']=$oFotoNasa;
+    }
+    $bMostrarBotonDetalle = true;
+    if ($oFotoNasa->getTitulo()==='Error de conexión con la NASA'){
+        $bMostrarBotonDetalle = false;
+    }
+    $avRest=[
+        /*API DE LA NASA*/
+        'FechaNasaEnCurso'   =>$sFechaSolicitada,
+        'Titulo'             =>$oFotoNasa->getTitulo(),
+        'Url'                =>$oFotoNasa->getUrl(),
+        'Descripcion'        =>$oFotoNasa->getDescripcion(),
+        'MostrarBotonDetalle'=>$bMostrarBotonDetalle
+    ];
     require_once $View['layout'];
 ?>

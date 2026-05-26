@@ -1,7 +1,7 @@
 <main id="contenedor">  
     <h2 id="titulo">DETALLES:</h2>
     <?php
-        echo('<h4>Contenido de la variable $_SESSION:</h4>');
+        echo('<h4 style="margin-top:18dvh;">Contenido de la variable $_SESSION:</h4>');
     ?>
     <table class="TablaPHP">
         <thead>
