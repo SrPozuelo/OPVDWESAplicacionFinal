@@ -12,7 +12,7 @@
         header('Location: '.$sIndex);
         exit;
     }
-    if (isset($_REQUEST['verDetalleNasa'])) {
+    if (isset($_REQUEST['VerDetalleNasa'])) {
         $_SESSION['PaginaAnterior']=$_SESSION['PaginaEnCurso'];
         $_SESSION['PaginaEnCurso']= '';
         header('Location: '.$sIndex);
@@ -48,9 +48,9 @@
         $oFotoNasa=REST::apiNasa($sFechaSolicitada);
         $_SESSION['fotoNasaEnCurso']=$oFotoNasa;
     }
-    $bMostrarBotonDetalle = true;
-    if ($oFotoNasa->getTitulo()==='Error de conexión con la NASA'){
-        $bMostrarBotonDetalle = false;
+    $bMostrarBotonDetalle=true;
+    if($oFotoNasa->getTitulo()==='Error de conexión con la NASA'){
+        $bMostrarBotonDetalle=false;
     }
     $avRest=[
         /*API DE LA NASA*/
