@@ -38,6 +38,7 @@
     else{
         if(isset($_SESSION['BusquedaDptoEnCurso'])){
             $sDescripcionBuscada=$_SESSION['BusquedaDptoEnCurso'];
+            $_REQUEST['DescDepartamento']=$_SESSION['BusquedaDptoEnCurso'];
         }
         else{
             $sDescripcionBuscada='';

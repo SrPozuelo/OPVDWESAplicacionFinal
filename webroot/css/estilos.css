@@ -23,6 +23,7 @@ body {
         z-index:0;
     }
     .CaptionCarrousel{
+        background-color:white !important;
         & h5{
             font-weight:900;
             font-size:1.5rem;
@@ -167,7 +168,7 @@ body {
             position:relative;
             width:37%;
             height:37%;
-            top:-2dvw;
+            top:5.2dvw;
             left:50%;
             transform:translate(-50%);
         }
@@ -263,6 +264,12 @@ body {
                     padding-top:1dvh;
                     padding-bottom:1dvh;
                     font-size:1.2rem;
+                    & #detallePre{
+                        width:50dvw;
+                        height:100%;
+                        padding:16px;
+                        overflow-x:scroll !important;
+                    }
                 }
                 & .centrado{
                     text-align:center;

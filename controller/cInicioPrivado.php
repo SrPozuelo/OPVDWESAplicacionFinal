@@ -59,6 +59,7 @@
         //Código que se ejecuta si el botón "Cerrar sesion" fue pulsado.
         $_SESSION['PaginaAnterior']=$_SESSION['paginaEnCurso'];
         $_SESSION['PaginaEnCurso']='inicioPublico';
+        $_SESSION['BusquedaDptoEnCurso']=(isset($_SESSION['BusquedaDptoEnCurso'])) ? '':$_SESSION['BusquedaDptoEnCurso'];
         header('Location: '.$sIndex);
         exit;
     }
