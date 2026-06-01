@@ -63,7 +63,7 @@
             </div>
 
             <div class="carousel-item" data-bs-interval="1500">
-                <img src="./webroot/images/230131DiagramaDeClases.PNG" class="d-block mx-auto rounded" alt="Diagrama de clases." style="width:23.46dvw !important;">
+                <img src="./webroot/images/ModeloDeClasesDeUsoDeLaAplicacion.PNG" class="d-block mx-auto rounded w-50" alt="Diagrama de clases.">
                 <div class="carousel-caption d-none d-md-block CaptionCarrousel">
                     <h5 class="text-black bg-transparent">DIAGRAMA DE CLASES</h5>
                     <p class="text-black bg-transparent">Diagrama de clases de la Aplicación Final.</p>
