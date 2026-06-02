@@ -13,8 +13,8 @@
         </div>
         <div class="carousel-inner">
 
-            <div class="carousel-item active" data-bs-interval="2000">
-                <img src="./webroot/images/230129DiagramaDeCasosDeUso.PNG" class="d-block mx-auto rounded" style="width:22.95dvw !important;">
+            <div class="carousel-item active" data-bs-interval="1500">
+                <img src="./webroot/images/230129DiagramaDeCasosDeUso.PNG" class="d-block mx-auto rounded" alt="Diagramas de caso de uso." style="width:22.95dvw !important;">
                 <div class="carousel-caption d-none d-md-block CaptionCarrousel">
                     <h5 class="text-black bg-transparent">DIAGRAMAS DE CASO DE USO</h5>
                     <p class="text-black bg-transparent">El diagrama de caso de uso de esta aplicación.</p>
@@ -23,8 +23,8 @@
             </div>
 
 
-            <div class="carousel-item" data-bs-interval="2000">
-                <img src="./webroot/images/220111UsoDeLaSessionParaLaAplicación.PNG" class="d-block w-25 mx-auto rounded">
+            <div class="carousel-item" data-bs-interval="1500">
+                <img src="./webroot/images/220111UsoDeLaSessionParaLaAplicación.PNG" class="d-block w-25 mx-auto rounded" alt="Uso de la sesión.">
                 <div class="carousel-caption d-none d-md-block CaptionCarrousel">
                     <h5 class="text-black bg-transparent">USO DE LA SESIÓN</h5>
                     <p class="text-black bg-transparent">Fichero con el uso de la sesión en esta aplicación.</p>
@@ -33,8 +33,8 @@
             </div>
 
 
-            <div class="carousel-item" data-bs-interval="2000">
-                <img src="./webroot/images/220504SecuenciaDesarrolloCRUDcompleto.PNG" class="d-block mx-auto rounded" style="width:22.52dvw !important;">
+            <div class="carousel-item" data-bs-interval="1500">
+                <img src="./webroot/images/220504SecuenciaDesarrolloCRUDcompleto.PNG" class="d-block mx-auto rounded" alt="Desarrollo del CRUD." style="width:22.52dvw !important;">
                 <div class="carousel-caption d-none d-md-block CaptionCarrousel">
                     <h5 class="text-black bg-transparent">DESARROLLO DEL CRUD</h5>
                     <p class="text-black bg-transparent">Secuencia del desarrollo del CRUD completo.</p>
@@ -43,8 +43,8 @@
             </div>
 
 
-            <div class="carousel-item" data-bs-interval="2000">
-                <img src="./webroot/images/230129ArbolDeNavegación.PNG" class="d-block mx-auto rounded" style="width:23.20dvw !important;">
+            <div class="carousel-item" data-bs-interval="1500">
+                <img src="./webroot/images/230129ArbolDeNavegación.PNG" class="d-block mx-auto rounded" alt="Árbol de navegación." style="width:23.20dvw !important;">
                 <div class="carousel-caption d-none d-md-block CaptionCarrousel">
                     <h5 class="text-black bg-transparent">ÁRBOL DE NAVEGACIÓN</h5>
                     <p class="text-black bg-transparent">Árbol de navegación de la aplicación final.</p>
@@ -53,8 +53,8 @@
             </div>
 
 
-            <div class="carousel-item" data-bs-interval="2000">
-                <img src="./webroot/images/230129CatalogoDeRequisitos.PNG" class="d-block mx-auto rounded" style="width:23.42dvw !important;">
+            <div class="carousel-item" data-bs-interval="1500">
+                <img src="./webroot/images/230129CatalogoDeRequisitos.PNG" class="d-block mx-auto rounded" alt="Catálogo de requisitos." style="width:23.42dvw !important;">
                 <div class="carousel-caption d-none d-md-block CaptionCarrousel">
                     <h5 class="text-black bg-transparent">CATÁLOGO DE REQUISITOS</h5>
                     <p class="text-black bg-transparent">Catálogo de requisitos de la Aplicación Final.</p>
@@ -62,8 +62,8 @@
                 </div>
             </div>
 
-            <div class="carousel-item" data-bs-interval="2000">
-                <img src="./webroot/images/230131DiagramaDeClases.PNG" class="d-block mx-auto rounded" style="width:23.46dvw !important;">
+            <div class="carousel-item" data-bs-interval="1500">
+                <img src="./webroot/images/ModeloDeClasesDeUsoDeLaAplicacion.PNG" class="d-block mx-auto rounded w-50" alt="Diagrama de clases.">
                 <div class="carousel-caption d-none d-md-block CaptionCarrousel">
                     <h5 class="text-black bg-transparent">DIAGRAMA DE CLASES</h5>
                     <p class="text-black bg-transparent">Diagrama de clases de la Aplicación Final.</p>
@@ -72,20 +72,22 @@
             </div>
 
 
-            <div class="carousel-item" data-bs-interval="2000">
-                <img src="webroot/images/home_banner_7_atto2.webp" class="d-block w-100" alt="BYD Atto2">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5 class="text-white bg-transparent">Septimo slide label</h5>
-                    <p class="text-white bg-transparent">Some representative placeholder content for the third slide.</p>
+            <div class="carousel-item" data-bs-interval="1500">
+                <img src="./webroot/images/230131RelacionDeFicheros.PNG" class="d-block mx-auto rounded" alt="Relación de ficheros." style="width:23.36dvw !important;">
+                <div class="carousel-caption d-none d-md-block CaptionCarrousel">
+                    <h5 class="text-black bg-transparent">RELACIÓN DE FICHEROS</h5>
+                    <p class="text-black bg-transparent">Relación de los ficheros de la Aplicación final.</p>
+                    <button type="button" class="btn btn-primary">AMPLIAR</button>
                 </div>
             </div>
 
 
-            <div class="carousel-item">
-                <video src="webroot/video/home_banner_8_sealion.mp4" class="d-block w-100 object-fit-contain" alt="BYD Seal Lion" autoplay loop preload="metadata"></video>
-                <div class="carousel-caption d-none d-md-block">
-                    <h5 class="text-white bg-transparent">Octavo slide label</h5>
-                    <p class="text-white bg-transparent">Some representative placeholder content for the third slide.</p>
+            <div class="carousel-item" data-bs-interval="1500">
+                <img src="./webroot/images/250211ModeloFisicoDeDatos.JPG" class="d-block mx-auto rounded" alt="Modelo físico de datos" style="width:22.4dvw !important;">
+                <div class="carousel-caption d-none d-md-block CaptionCarrousel">
+                    <h5 class="text-black bg-transparent">MODELO FÍSICO DE DATOS</h5>
+                    <p class="text-black bg-transparent">Modelo físico de datos de la Aplicación final.</p>
+                    <button type="button" class="btn btn-primary">AMPLIAR</button>
                 </div>
             </div>
         </div>

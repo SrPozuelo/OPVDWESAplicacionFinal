@@ -12,17 +12,11 @@
         header('Location: '.$sIndex);
         exit;
     }
-    if (isset($_REQUEST['verDetalleNasa'])) {
-        $_SESSION['PaginaAnterior']=$_SESSION['PaginaEnCurso'];
-        $_SESSION['PaginaEnCurso']= '';
-        header('Location: '.$sIndex);
-        exit;
-    }
     $oFechaActual=new DateTime();
-    $sFechaActualFormateada=$oFechaActual->format('d-m-y');
+    $sFechaActualFormateada=$oFechaActual->format('Y-m-d');
     $FechaMinima="16-06-1995";
-    if(!isset($Session['FechaNasaEnCurso'])){
-        $_SESSION['FechaNasaEnCurso']=$FechaActualFormateada;
+    if(!isset($_SESSION['FechaNasaEnCurso'])){
+        $_SESSION['FechaNasaEnCurso']=$sFechaActualFormateada;
     }
     $aErrores=['FechaNasaEnCurso'=>null];
     $EntradaOK=true;
@@ -33,11 +27,44 @@
         }
         if($EntradaOK){
             $sFechaNueva=$_REQUEST['FechaNasaEnCurso'];
-            if($FechaNueva!==$_SESSION['FechaNasaEnCurso']){
-                $_SESSION['FechaNasaEnCurso']=$FechaNueva;
+            if($sFechaNueva!==$_SESSION['FechaNasaEnCurso']){
+                $_SESSION['FechaNasaEnCurso']=$sFechaNueva;
                 unset($_SESSION['FotoNasaEnCurso']);
             }
         }
     }
+    else{
+        $EntradaOK=false;
+    }
+    $sFechaSolicitada=$_SESSION['FechaNasaEnCurso'];
+    $oFotoNasa=null;
+    if((isset($_SESSION['FotoNasaEnCurso'])) && ($_SESSION['FotoNasaEnCurso'] instanceof FotoNasa) && ($_SESSION['FotoNasaEnCurso']->getFecha()=== $sFechaSolicitada)){
+        $oFotoNasa=$_SESSION['FotoNasaEnCurso'];
+    }
+    else{
+        $oFotoNasa=REST::apiNasa($sFechaSolicitada);
+        $_SESSION['FotoNasaEnCurso']=$oFotoNasa;
+    }
+    $bMostrarBotonDetalle=true;
+    if($oFotoNasa->getTitulo()==='Error de conexión con la NASA'){
+        $bMostrarBotonDetalle=false;
+    }
+    if($EntradaOK){
+        if(isset($_REQUEST['VerDetalleNasa'])) {
+            $_SESSION['PaginaAnterior']=$_SESSION['PaginaEnCurso'];
+            $_SESSION['PaginaEnCurso']= 'detallesNasa';
+            header('Location: '.$sIndex);
+            exit;
+        }
+    }
+    $avRest=[
+        /*API DE LA NASA*/
+        'FechaNasaEnCurso'     =>$sFechaSolicitada,
+        'FechaNasaEnCursoError'=>$aErrores['FechaNasaEnCurso'],
+        'Titulo'               =>$oFotoNasa->getTitulo(),
+        'Url'                  =>$oFotoNasa->getUrl(),
+        'Descripcion'          =>$oFotoNasa->getDescripcion(),
+        'MostrarBotonDetalle'  =>$bMostrarBotonDetalle
+    ];
     require_once $View['layout'];
 ?>

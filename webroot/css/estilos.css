@@ -23,6 +23,7 @@ body {
         z-index:0;
     }
     .CaptionCarrousel{
+        background-color:white !important;
         & h5{
             font-weight:900;
             font-size:1.5rem;
@@ -125,12 +126,49 @@ body {
         display:flex;
         flex-direction:column;
         margin-top:5dvh;
+        & #Apis{
+            height:67dvh;
+            top:55%;
+            transform:translate(-50%,-50%);
+            & #div1{
+                background-color:#20c997;
+                height:100%;
+                padding-top:12px;
+                padding-bottom:12px;
+                border-radius:10px;
+                & #TituloNasa{
+                    font-size:1.2rem;
+                    font-weight:bold;
+                }
+                & #Desc{
+                    width:100%;
+                    margin-top:10px;
+                    text-align:center;
+                }
+                & #Scroll{
+                    height:20%;
+                    background-color:white;
+                    border:2px solid black;
+                    margin-bottom:16px;
+                    padding-left:5px;
+                    padding-right:5px;
+                    border-top-left-radius:10px;
+                    border-bottom-left-radius:10px;
+                    overflow-y:scroll;
+                }
+            }
+            & #div2{
+                background-color:#20c997;
+                height:100%;
+                border-radius:10px;
+            }
+        }
         & #WIP{
             display:block;
             position:relative;
             width:37%;
             height:37%;
-            top:-2dvw;
+            top:5.2dvw;
             left:50%;
             transform:translate(-50%);
         }
@@ -226,6 +264,12 @@ body {
                     padding-top:1dvh;
                     padding-bottom:1dvh;
                     font-size:1.2rem;
+                    & #detallePre{
+                        width:50dvw;
+                        height:100%;
+                        padding:16px;
+                        overflow-x:scroll !important;
+                    }
                 }
                 & .centrado{
                     text-align:center;

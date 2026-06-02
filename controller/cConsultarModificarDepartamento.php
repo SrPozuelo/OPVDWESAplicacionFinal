@@ -53,12 +53,11 @@
     }
     if(isset($_REQUEST['Modificar'])){
         $DescDepartamentoMostrar=(isset($_REQUEST["DescDepartamento"])&&empty($aErrores["DescDepartamento"])) ? $_REQUEST["DescDepartamento"]:$oDepartamento->getDescDepartamento();
-        $VolumenDeNegocioMostrar=(isset($_REQUEST["VolumenDeNegocio"])&&empty($aErrores["VolumenDeNegocio"])) ? $_REQUEST["VolumenDeNegocio"]:$oDepartamento->getVolumenDeNegocio();
-        $VolumenDeNegocioMostrar=number_format($VolumenDeNegocioMostrar, 2, ',', '.');
+        $VolumenDeNegocioMostrar=(isset($_REQUEST["VolumenDeNegocio"])&&empty($aErrores["VolumenDeNegocio"])) ? $_REQUEST["VolumenDeNegocio"]:number_format($oDepartamento->getVolumenDeNegocio(), 2, ',', '');
     }
     else{
         $DescDepartamentoMostrar=$oDepartamento->getDescDepartamento();
-        $VolumenDeNegocioMostrar=number_format($oDepartamento->getVolumenDeNegocio(), 2, ',','.');
+        $VolumenDeNegocioMostrar=number_format($oDepartamento->getVolumenDeNegocio(), 2, ',','');
     }
     $avConsultarModificarDepartamento=[
         'CodDepartamento'      =>$oDepartamento->getCodDepartamento(),

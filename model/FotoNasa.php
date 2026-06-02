@@ -20,19 +20,19 @@ class FotoNasa {
         $this->sDescripcion=$sDescripcion;
         $this->sUrlHD=$sUrlHD;
     }
-    public function getSTitulo(){
+    public function getTitulo(){
         return $this->sTitulo;
     }
-    public function getSUrl(){
+    public function getUrl(){
         return $this->sUrl;
     }
-    public function getSFecha(){
+    public function getFecha(){
         return $this->sFecha;
     }
-    public function getSDescripcion(){
+    public function getDescripcion(){
         return $this->sDescripcion;
     }
-    public function getSUrlHD(){
+    public function getUrlHD(){
         return $this->sUrlHD;
     }
 }

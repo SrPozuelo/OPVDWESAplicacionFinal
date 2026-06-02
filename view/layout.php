@@ -79,6 +79,7 @@
                 <div class="iconos-footer">
                     <a href="https://github.com/SrPozuelo/OPVDWESAplicacionFinal" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
                     <a href="../../OPVDWESProyectoDWES/indexProyectoDWES.html" title="Inicio"><i class="fa-solid fa-house"></i></a>
+                    <a href="./../OPVDWESAplicacionFinal/doc/phpdoc/.phpdoc/index.html"><i class="fa-solid fa-file-lines" style="color:white;"></i></a>
                 </div>
             </div>
         </footer>

@@ -22,7 +22,8 @@
         'plantilla'       => 'controller/cPlantilla.php',
         'departamento'    => 'controller/cMtoDepartamentos.php',
         'rest'            => 'controller/cRest.php',
-        'editar'          => 'controller/cConsultarModificarDepartamento.php'
+        'editar'          => 'controller/cConsultarModificarDepartamento.php',
+        'detallesNasa'    => 'controller/cDetalleFotoNasa.php'
     ];
     $View=[
         'inicioPublico'   => 'view/vInicioPublico.php',
@@ -39,6 +40,7 @@
         'plantilla'       => 'view/vPlantilla.php',
         'departamento'    => 'view/vMtoDepartamentos.php',
         'rest'            => 'view/vRest.php',
-        'editar'          => 'view/vConsultarModificarDepartamento.php'
+        'editar'          => 'view/vConsultarModificarDepartamento.php',
+        'detallesNasa'    => 'view/vDetalleFotoNasa.php'
     ];
 ?>
