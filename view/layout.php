@@ -52,6 +52,7 @@
                         case 'departamento':
                         case 'rest':
                         case 'editar':
+                        case 'ampliar':
                             ?>
                                 <form action="" method="post" >
                                     <button type="submit" name="Volver" id="Sesion" class="btn btn-primary"><span>VOLVER</span></button>

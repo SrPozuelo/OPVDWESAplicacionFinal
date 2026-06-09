@@ -16,6 +16,13 @@
         header('Location: '.$sIndex);
         exit;
     }
+    if(isset($_REQUEST['Ampliar'])){
+        $_SESSION['PaginaAnterior']=$_SESSION['PaginaEnCurso'];
+        $_SESSION['PaginaEnCurso']='ampliar';
+        setcookie("Archivo",$_REQUEST['Ampliar'],(time()+(3600*24*7)));
+        header('Location: '.$sIndex);
+        exit;
+    }
     $avInicioPublico=[
         'Idioma'=>$_COOKIE['Idioma'] ?? 'es'
     ];
