@@ -6,12 +6,11 @@
         <title>Tema 7-8 | Óscar Pozuelo Villamandos</title>
         <link rel="stylesheet" href="./webroot/css/fonts.css">
         <link rel="stylesheet" href="./webroot/css/all.min.css">
-        <link rel="stylesheet" href="./webroot/css/estilos.css"> 
-        <link rel="stylesheet" href="./webroot/css/estilosTabla.css">
+        <link rel="stylesheet" href="./webroot/css/estilos.css">
         <link rel="stylesheet" href="./webroot/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">     
     </head>
-    <body <?php if($_SESSION['PaginaEnCurso']=='wip'){echo 'style="background-color:#f5f5f5 !important;"';}?> >
+    <body <?php if($_SESSION['PaginaEnCurso']=='wip'){echo 'style="background-color:#f5f5f5 !important;"';}?> id="Cuerpo">
         <header class="cabecera-principal">
             <div class="contenido-cabecera">
                 <div class="identidad">
