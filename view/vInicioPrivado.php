@@ -1,7 +1,7 @@
 <main id="contenedor">  
     <h2 id="titulo">INICIO PRIVADO</h2>
     <form action="" method="post" id="Detalles">
-        <button name="Plantilla" id="Boton"><span>PLANTILLA</span></button>
+        <button name="Plantilla" id="Boton"><span>TIEMPO</span></button>
         <button name="Detalles" id="Boton"><span>DETALLES</span></button>
         <button name="Error" id="Boton"><span>ERROR</span></button>
         <button name="Departamentos" id="Boton"><span>DEPARTAMENTOS</span></button>

@@ -4,14 +4,34 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Tema 7-8 | Óscar Pozuelo Villamandos</title>
-        <link rel="stylesheet" href="./webroot/css/fonts.css">
-        <link rel="stylesheet" href="./webroot/css/all.min.css">
-        <link rel="stylesheet" href="./webroot/css/estilos.css"> 
-        <link rel="stylesheet" href="./webroot/css/estilosTabla.css">
-        <link rel="stylesheet" href="./webroot/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">     
+        <?php
+            switch($_SESSION['PaginaEnCurso']){
+                case 'plantilla':
+                    ?>
+                        <link rel="stylesheet" href="./webroot/css/fonts.css">
+                        <link rel="stylesheet" href="./webroot/css/all.min.css">
+                        <link rel="stylesheet" href="./webroot/css/estilos.css">
+                        <link rel="stylesheet" href="./webroot/css/estilosApiDeMapas.css">
+                        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+                        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+                        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+                        <script defer src="./webroot/js/ApiDeMapas.js"></script>
+                    <?php
+                break;
+                default:
+                    ?>
+                        <link rel="stylesheet" href="./webroot/css/fonts.css">
+                        <link rel="stylesheet" href="./webroot/css/all.min.css">
+                        <link rel="stylesheet" href="./webroot/css/estilos.css">
+                        <link rel="stylesheet" href="./webroot/css/estilosTabla.css">
+                        <link rel="stylesheet" href="./webroot/css/bootstrap.min.css">
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+                    <?php
+                break;
+            }
+        ?>
     </head>
-    <body <?php if($_SESSION['PaginaEnCurso']=='wip'){echo 'style="background-color:#f5f5f5 !important;"';}?> >
+    <body <?php if($_SESSION['PaginaEnCurso']=='wip'){echo 'style="background-color:#f5f5f5 !important;"';}?> id="Cuerpo">
         <header class="cabecera-principal">
             <div class="contenido-cabecera">
                 <div class="identidad">
@@ -52,6 +72,7 @@
                         case 'departamento':
                         case 'rest':
                         case 'editar':
+                        case 'ampliar':
                             ?>
                                 <form action="" method="post" >
                                     <button type="submit" name="Volver" id="Sesion" class="btn btn-primary"><span>VOLVER</span></button>

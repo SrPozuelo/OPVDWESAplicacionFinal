@@ -19,11 +19,12 @@
         'borrarCuenta'    => 'controller/cBorrarCuenta.php',
         'error'           => 'controller/cError.php',
         'wip'             => 'controller/cWIP.php',
-        'plantilla'       => 'controller/cPlantilla.php',
+        'plantilla'       => 'controller/cTiempo.php',
         'departamento'    => 'controller/cMtoDepartamentos.php',
         'rest'            => 'controller/cRest.php',
         'editar'          => 'controller/cConsultarModificarDepartamento.php',
-        'detallesNasa'    => 'controller/cDetalleFotoNasa.php'
+        'detallesNasa'    => 'controller/cDetalleFotoNasa.php',
+        'ampliar'         => 'controller/cAmpliar.php'
     ];
     $View=[
         'inicioPublico'   => 'view/vInicioPublico.php',
@@ -37,10 +38,11 @@
         'borrarCuenta'    => 'view/vBorrarCuenta.php',
         'error'           => 'view/vError.php',
         'wip'             => 'view/vWIP.php',
-        'plantilla'       => 'view/vPlantilla.php',
+        'plantilla'       => 'view/vTiempo.php',
         'departamento'    => 'view/vMtoDepartamentos.php',
         'rest'            => 'view/vRest.php',
         'editar'          => 'view/vConsultarModificarDepartamento.php',
-        'detallesNasa'    => 'view/vDetalleFotoNasa.php'
+        'detallesNasa'    => 'view/vDetalleFotoNasa.php',
+        'ampliar'         => 'view/vAmpliar.php'
     ];
 ?>
