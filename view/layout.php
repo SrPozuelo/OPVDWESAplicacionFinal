@@ -13,7 +13,6 @@
                         <link rel="stylesheet" href="./webroot/css/estilos.css">
                         <link rel="stylesheet" href="./webroot/css/estilosApiDeMapas.css">
                         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-                        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
                         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
                         <script defer src="./webroot/js/ApiDeMapas.js"></script>
                     <?php
@@ -25,11 +24,11 @@
                         <link rel="stylesheet" href="./webroot/css/estilos.css">
                         <link rel="stylesheet" href="./webroot/css/estilosTabla.css">
                         <link rel="stylesheet" href="./webroot/css/bootstrap.min.css">
-                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
                     <?php
                 break;
             }
         ?>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     </head>
     <body <?php if($_SESSION['PaginaEnCurso']=='wip'){echo 'style="background-color:#f5f5f5 !important;"';}?> id="Cuerpo">
         <header class="cabecera-principal">
